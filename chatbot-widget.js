@@ -2,8 +2,7 @@
 (function () {
   'use strict';
 
-  // TODO: Update after Cloudflare Worker deployment
-  var WORKER_URL = 'https://tudatosai-chatbot.YOUR_SUBDOMAIN.workers.dev/chat';
+  var WORKER_URL = 'https://tudatosai-chatbot.szabo-leonard-henrik.workers.dev/chat';
 
   var MAX_HISTORY = 20;
   var history = [];
