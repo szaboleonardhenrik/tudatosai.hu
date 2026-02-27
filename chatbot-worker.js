@@ -53,6 +53,45 @@ const SYSTEM_PROMPT = `Te a TudatosAI virtuális AI asszisztense vagy. A Tudatos
 
 const ALLOWED_ORIGIN = 'https://tudatosai.hu';
 
+// Rate limit: max 10 messages per IP per hour, max 100 total API calls per hour
+const IP_LIMIT = 10;
+const GLOBAL_LIMIT = 100;
+const WINDOW_MS = 60 * 60 * 1000; // 1 hour
+const ipRequests = new Map();
+let globalCount = 0;
+let globalWindowStart = Date.now();
+
+function checkRateLimit(ip) {
+  const now = Date.now();
+
+  // Reset global counter every hour
+  if (now - globalWindowStart > WINDOW_MS) {
+    globalCount = 0;
+    globalWindowStart = now;
+  }
+  if (globalCount >= GLOBAL_LIMIT) return false;
+
+  // Per-IP limit
+  const entry = ipRequests.get(ip);
+  if (entry && now - entry.start < WINDOW_MS) {
+    if (entry.count >= IP_LIMIT) return false;
+    entry.count++;
+  } else {
+    ipRequests.set(ip, { count: 1, start: now });
+  }
+
+  globalCount++;
+
+  // Cleanup old IPs every 50 requests
+  if (globalCount % 50 === 0) {
+    for (const [k, v] of ipRequests) {
+      if (now - v.start > WINDOW_MS) ipRequests.delete(k);
+    }
+  }
+
+  return true;
+}
+
 export default {
   async fetch(request, env) {
     // CORS preflight
@@ -64,6 +103,12 @@ export default {
 
     if (request.method !== 'POST') {
       return jsonResponse({ error: 'Method not allowed' }, 405);
+    }
+
+    // Rate limiting
+    const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+    if (!checkRateLimit(ip)) {
+      return jsonResponse({ error: 'Túl sok kérés. Kérlek próbáld újra később.' }, 429);
     }
 
     try {
@@ -87,8 +132,8 @@ export default {
           'anthropic-version': '2023-06-01',
         },
         body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
-          max_tokens: 512,
+          model: 'claude-haiku-4-5-20251001',
+          max_tokens: 300,
           system: SYSTEM_PROMPT,
           messages: trimmed,
         }),
