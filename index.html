@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="hu" data-theme="light" data-lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TudatosAI – AI Bevezetés & Tanácsadás Magyar Vállalkozásoknak</title>
+<meta name="description" content="A TudatosAI segít magyar vállalkozásoknak az AI bevezetésében: stratégia, implementáció, tréning, automatizáció. Ingyenes konzultáció. TDHR Group tagja.">
+<meta name="keywords" content="AI tanácsadás, mesterséges intelligencia, AI bevezetés, AI stratégia, ChatGPT üzleti, automatizáció, magyar AI cég, KKV AI, TDHR Group">
+<link rel="canonical" href="https://tudatosai.hu/">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="TudatosAI – AI Bevezetés & Tanácsadás Magyar Vállalkozásoknak">
+<meta property="og:description" content="Segítünk vállalkozásodnak megérteni, integrálni és kiaknázni az AI-ban rejlő lehetőségeket — stratégiai szemlélettel, mérhető eredményekkel.">
+<meta property="og:url" content="https://tudatosai.hu/">
+<meta property="og:image" content="https://tudatosai.hu/og-image.jpg">
+<meta property="og:locale" content="hu_HU">
+<meta property="og:site_name" content="TudatosAI">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TudatosAI – AI Bevezetés & Tanácsadás">
+<meta name="twitter:description" content="AI stratégia, implementáció és tréning magyar vállalkozásoknak. Ingyenes konzultáció.">
+<meta name="twitter:image" content="https://tudatosai.hu/og-image.jpg">
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<!-- JSON-LD Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "TudatosAI",
+  "url": "https://tudatosai.hu",
+  "logo": "https://tudatosai.hu/og-image.jpg",
+  "email": "hello@tudatosai.hu",
+  "telephone": "+36705678948",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Budapest",
+    "addressCountry": "HU",
+    "streetAddress": "Alphagon Irodaház"
+  },
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "TDHR Group",
+    "url": "https://tdhr.hu"
+  },
+  "description": "AI tanácsadás és implementáció magyar vállalkozásoknak. Stratégia, automatizáció, tréning.",
+  "sameAs": []
+}
+</script>
+<!-- Chatbot -->
+<link rel="stylesheet" href="/chatbot-widget.css">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+/* ═══ TOKENS ═══ */
+:root {
+  --gold:#D29B01; --gold-light:#F5E8B0; --gold-pale:#FBF5E0;
+  --blue:#2F6482; --blue-light:#EAF2F7;
+  --teal:#46A0A0; --teal-light:#E8F5F5; --teal-dark:#357878;
+  --bg-page:#F8FAFB; --bg-card:#FFFFFF; --bg-alt:#F0F5F7;
+  --bg-nav:rgba(255,255,255,0.94); --border:#DDE7EC;
+  --text:#1E2E38; --text-mid:#3D5260; --text-muted:#6B8290;
+  --shadow-sm:0 2px 10px rgba(47,100,130,.07);
+  --shadow-md:0 8px 28px rgba(47,100,130,.11);
+  --shadow-lg:0 16px 48px rgba(47,100,130,.14);
+}
+[data-theme="dark"] {
+  --bg-page:#1F2F3D; --bg-card:#283D4E; --bg-alt:#243545;
+  --bg-nav:rgba(31,47,61,0.96); --border:#446070;
+  --text:#F0F5F8; --text-mid:#C4DAE5; --text-muted:#96B5C6;
+  --shadow-sm:0 2px 10px rgba(0,0,0,.2); --shadow-md:0 8px 28px rgba(0,0,0,.3); --shadow-lg:0 16px 48px rgba(0,0,0,.4);
+  --blue-light:#2E4858; --teal-light:#284242; --gold-pale:#352E08;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg-page);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden;transition:background .3s,color .3s;}
+img,svg{display:block;} a{text-decoration:none;}
+
+/* ═══ NAV ═══ */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--bg-nav);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:68px;display:flex;align-items:center;padding:0 5%;gap:1.5rem;transition:background .3s,border-color .3s;}
+.logo{font-family:'DM Serif Display',serif;font-size:1.45rem;color:var(--text);letter-spacing:-.01em;white-space:nowrap;}
+.logo em{color:var(--teal);font-style:normal;}
+.nav-links{display:flex;gap:1.6rem;list-style:none;align-items:center;margin-left:auto;}
+.nav-links a{color:var(--text-muted);font-size:.875rem;font-weight:500;transition:color .2s;white-space:nowrap;}
+.nav-links a:hover{color:var(--teal);}
+.nav-actions{display:flex;align-items:center;gap:.7rem;flex-shrink:0;}
+.lang-toggle{display:flex;align-items:center;background:var(--bg-alt);border:1px solid var(--border);border-radius:8px;overflow:hidden;height:34px;}
+.lang-btn{padding:0 .75rem;font-size:.75rem;font-weight:600;color:var(--text-muted);cursor:pointer;border:none;background:transparent;height:100%;transition:background .2s,color .2s;font-family:'DM Sans',sans-serif;letter-spacing:.04em;}
+.lang-btn.active{background:var(--teal);color:#fff;}
+.dark-toggle{width:36px;height:36px;background:var(--bg-alt);border:1px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+.dark-toggle:hover{background:var(--border);}
+.dark-toggle svg{width:18px;height:18px;fill:none;stroke:var(--text-muted);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.icon-moon{display:block;} .icon-sun{display:none;}
+[data-theme="dark"] .icon-moon{display:none;} [data-theme="dark"] .icon-sun{display:block;}
+.nav-cta{padding:0 1.2rem;height:36px;background:var(--teal);color:#fff!important;border-radius:8px;font-weight:600!important;font-size:.85rem!important;display:inline-flex;align-items:center;transition:background .2s,transform .15s!important;}
+.nav-cta:hover{background:var(--blue)!important;transform:translateY(-1px);}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;margin-left:auto;background:none;border:none;}
+.nav-hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:transform .3s,opacity .3s;}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-hamburger.open span:nth-child(2){opacity:0;}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-nav{display:none;position:fixed;top:68px;left:0;right:0;z-index:299;background:var(--bg-card);border-bottom:1px solid var(--border);padding:1.5rem 5%;flex-direction:column;gap:1rem;box-shadow:var(--shadow-md);}
+.mobile-nav.open{display:flex;}
+.mobile-nav a{color:var(--text);font-weight:500;padding:.4rem 0;border-bottom:1px solid var(--border);}
+
+/* ═══ HERO ═══ */
+#hero{min-height:100vh;padding:120px 5% 80px;display:flex;align-items:center;background:var(--bg-card);position:relative;overflow:hidden;}
+.hero-blob-1{position:absolute;right:-80px;top:-60px;width:550px;height:550px;border-radius:50%;background:radial-gradient(circle at 55% 45%,var(--teal-light),transparent 70%);opacity:.9;pointer-events:none;}
+.hero-blob-2{position:absolute;left:-40px;bottom:-40px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,var(--gold-pale),transparent 70%);opacity:.7;pointer-events:none;}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;width:100%;}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--teal-light);color:var(--teal);font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.35rem .9rem;border-radius:100px;margin-bottom:1.5rem;}
+.badge-dot{width:6px;height:6px;background:var(--teal);border-radius:50%;animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+.hero-title{font-family:'DM Serif Display',serif;font-size:clamp(2.3rem,4vw,3.6rem);line-height:1.1;letter-spacing:-.025em;color:var(--text);margin-bottom:1.4rem;}
+.hero-title .accent{color:var(--teal);}
+.hero-desc{font-size:1.05rem;color:var(--text-muted);line-height:1.75;max-width:480px;margin-bottom:2.5rem;font-weight:300;}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-fill{padding:.85rem 2rem;background:var(--teal);color:#fff;border:none;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:.4rem;transition:background .2s,transform .15s,box-shadow .2s;}
+.btn-fill:hover{background:var(--blue);transform:translateY(-2px);box-shadow:0 6px 20px rgba(47,100,130,.28);}
+.btn-outline{padding:.85rem 2rem;background:transparent;color:var(--blue);border:1.5px solid var(--blue);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:.4rem;transition:background .2s,transform .15s;}
+.btn-outline:hover{background:var(--blue-light);transform:translateY(-2px);}
+.stat-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
+.stat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:1.6rem 1.2rem;text-align:center;box-shadow:var(--shadow-sm);transition:transform .2s,box-shadow .2s,background .3s,border-color .3s;}
+.stat-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);}
+.stat-card.featured{background:var(--teal);border-color:var(--teal);}
+.stat-num{font-family:'DM Serif Display',serif;font-size:2.4rem;line-height:1;color:var(--text);white-space:nowrap;}
+.stat-unit{color:var(--gold);}
+.stat-card.featured .stat-num{color:#fff;}
+.stat-card.featured .stat-unit{color:var(--gold-light);}
+.stat-card.featured .stat-label{color:rgba(255,255,255,.8);}
+.stat-label{font-size:.72rem;color:var(--text-muted);margin-top:.5rem;font-weight:500;}
+
+/* ═══ SECTION BASE ═══ */
+.section-wrap{padding:7rem 5%;background:var(--bg-page);transition:background .3s;}
+.section-wrap.alt{background:var(--bg-alt);}
+.section-header{max-width:640px;margin-bottom:4rem;}
+.section-eyebrow{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:.8rem;}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.7rem);line-height:1.15;letter-spacing:-.02em;color:var(--text);margin-bottom:.8rem;}
+.section-desc{font-size:1rem;color:var(--text-muted);line-height:1.7;font-weight:300;}
+
+/* ═══ SERVICES ═══ */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.svc-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:2rem;transition:transform .2s,box-shadow .2s,border-color .2s,background .3s;position:relative;overflow:hidden;}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--blue));transform:scaleX(0);transform-origin:left;transition:transform .35s ease;}
+.svc-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:transparent;}
+.svc-card:hover::before{transform:scaleX(1);}
+.svc-num{font-size:.68rem;font-weight:600;letter-spacing:.12em;color:var(--teal);text-transform:uppercase;margin-bottom:.9rem;}
+.icon-box{width:44px;height:44px;background:var(--teal-light);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;transition:background .3s;}
+.icon-box svg{width:22px;height:22px;stroke:var(--teal);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.svc-title{font-size:1rem;font-weight:600;color:var(--text);margin-bottom:.55rem;}
+.svc-desc{font-size:.85rem;color:var(--text-muted);line-height:1.65;font-weight:300;}
+.svc-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.2rem;}
+.chip{padding:.22rem .65rem;border-radius:100px;background:var(--blue-light);color:var(--blue);font-size:.68rem;font-weight:500;}
+
+/* ═══ SPECIALTIES BAND ═══ */
+.specialty-band{background:linear-gradient(135deg,var(--blue) 0%,var(--teal) 100%);padding:4rem 5%;}
+.specialty-header{text-align:center;max-width:600px;margin:0 auto 3rem;}
+.specialty-header .section-eyebrow{color:rgba(255,255,255,.7);}
+.specialty-header .section-title{color:#fff;}
+.specialty-header .section-desc{color:rgba(255,255,255,.75);}
+.specialty-inner{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;max-width:1100px;margin:0 auto;}
+.spec-item{text-align:center;color:#fff;}
+.spec-icon{width:52px;height:52px;background:rgba(255,255,255,.15);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;}
+.spec-icon svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.spec-title{font-size:1rem;font-weight:600;margin-bottom:.4rem;}
+.spec-desc{font-size:.82rem;opacity:.85;line-height:1.6;}
+
+/* ═══ ABOUT ═══ */
+.about-intro-card{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:2.8rem 3rem;box-shadow:var(--shadow-md);margin-bottom:3.5rem;transition:background .3s,border-color .3s;}
+.card-eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:.6rem;}
+.card-heading{font-family:'DM Serif Display',serif;font-size:1.35rem;color:var(--text);margin-bottom:.7rem;line-height:1.2;}
+.card-body{font-size:.85rem;color:var(--text-muted);line-height:1.65;}
+.aic-stats{display:flex;align-items:center;gap:2rem;flex-shrink:0;}
+.aic-stat{text-align:center;}
+.aic-num{font-family:'DM Serif Display',serif;font-size:2.6rem;color:var(--teal);line-height:1;margin-bottom:.3rem;white-space:nowrap;}
+.aic-unit{color:var(--gold);}
+.aic-lbl{font-size:.75rem;color:var(--text-muted);font-weight:500;white-space:nowrap;}
+.aic-stat-sep{width:1px;height:50px;background:var(--border);}
+.about-body{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.about-timeline{display:flex;flex-direction:column;gap:1.8rem;margin-top:1.5rem;}
+.tl-item{display:flex;gap:1.1rem;}
+.tl-icon{width:38px;height:38px;flex-shrink:0;background:var(--teal-light);border:2px solid var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:.1rem;transition:background .3s;}
+.tl-icon svg{width:17px;height:17px;stroke:var(--teal);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;}
+.tl-title{font-size:.95rem;font-weight:600;color:var(--text);margin-bottom:.25rem;}
+.tl-desc{font-size:.85rem;color:var(--text-muted);line-height:1.6;font-weight:300;}
+.hl-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-self:center;}
+.hl-item{background:var(--bg-alt);border:1px solid var(--border);border-radius:10px;padding:1.1rem;transition:background .3s,border-color .3s;}
+.hl-icon-wrap{width:32px;height:32px;background:var(--teal-light);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:.5rem;transition:background .3s;}
+.hl-icon-wrap svg{width:15px;height:15px;stroke:var(--teal);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.hl-title{font-size:.84rem;font-weight:600;color:var(--text);margin-bottom:.2rem;}
+.hl-text{font-size:.77rem;color:var(--text-muted);line-height:1.5;}
+
+/* ═══ PROCESS ═══ */
+.process-section{padding:7rem 5%;background:var(--bg-alt);}
+.process-intro{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-bottom:4rem;}
+.metrics-row{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;}
+.metric-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:1.6rem 1.4rem;text-align:center;box-shadow:var(--shadow-sm);transition:transform .2s,box-shadow .2s,background .3s;}
+.metric-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);}
+.metric-num{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--teal);line-height:1;margin-bottom:.3rem;}
+.metric-label{font-size:.75rem;color:var(--text-muted);font-weight:500;line-height:1.4;}
+.metric-sub{font-size:.68rem;color:var(--text-muted);opacity:.7;margin-top:.2rem;}
+.process-steps-visual{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+.ps-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2rem;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s,background .3s;}
+.ps-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+.ps-card-accent{position:absolute;top:0;left:0;bottom:0;width:4px;background:linear-gradient(to bottom,var(--teal),var(--blue));}
+.ps-num{font-family:'DM Serif Display',serif;font-size:2.8rem;color:var(--gold-light);line-height:1;margin-bottom:.8rem;}
+[data-theme="dark"] .ps-num{color:rgba(210,155,1,.3);}
+.ps-icon{width:42px;height:42px;background:var(--teal-light);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;transition:background .3s;}
+.ps-icon svg{width:20px;height:20px;stroke:var(--teal);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.ps-title{font-size:1rem;font-weight:600;color:var(--text);margin-bottom:.5rem;}
+.ps-desc{font-size:.82rem;color:var(--text-muted);line-height:1.65;}
+
+/* ═══ SOCIAL PROOF BAND ═══ */
+.social-proof-band{background:linear-gradient(135deg,#0F1A22 0%,#1A2D3A 60%,#162830 100%);padding:3.5rem 5%;}
+[data-theme="dark"] .social-proof-band{background:linear-gradient(135deg,#182838 0%,#1F3040 60%,#1C3434 100%);}
+.sp-inner{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:0;align-items:center;max-width:900px;margin:0 auto;}
+.sp-divider{width:1px;height:60px;background:rgba(255,255,255,.12);margin:0 2.5rem;}
+.sp-item{display:flex;align-items:center;gap:1.2rem;padding:0 .5rem;}
+.sp-icon-wrap{width:52px;height:52px;background:rgba(70,160,160,.15);border:1px solid rgba(70,160,160,.25);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.sp-icon-wrap svg{width:24px;height:24px;stroke:var(--teal);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+.sp-stars{display:flex;gap:3px;align-items:center;margin-bottom:.3rem;}
+.sp-stars svg{width:15px;height:15px;fill:#FBBC05;}
+.sp-score{font-size:.9rem;font-weight:700;color:#fff;margin-left:.4rem;}
+.sp-big{font-family:'DM Serif Display',serif;font-size:2.2rem;color:#fff;line-height:1;margin-bottom:.25rem;}
+.sp-unit{color:var(--teal);}
+.sp-val{font-size:.78rem;color:rgba(255,255,255,.55);font-weight:500;}
+
+/* ═══ TESTIMONIALS ═══ */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.testi-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:2rem;transition:transform .2s,box-shadow .2s,background .3s,border-color .3s;display:flex;flex-direction:column;}
+.testi-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);}
+.testi-stars{display:flex;gap:3px;margin-bottom:1rem;}
+.testi-stars svg{width:15px;height:15px;fill:var(--gold);}
+.testi-text{font-size:.88rem;color:var(--text);line-height:1.75;font-weight:300;font-style:italic;border-left:3px solid var(--teal-light);padding-left:1rem;margin-bottom:1.5rem;flex:1;}
+.testi-author{display:flex;align-items:center;gap:.8rem;}
+.testi-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--teal));display:flex;align-items:center;justify-content:center;color:#fff;font-size:.78rem;font-weight:700;flex-shrink:0;font-family:'DM Serif Display',serif;}
+.testi-name{font-size:.85rem;font-weight:600;color:var(--text);}
+.testi-role{font-size:.72rem;color:var(--text-muted);}
+.testi-company{font-size:.72rem;color:var(--teal);font-weight:500;}
+
+/* ═══ CONTACT ═══ */
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:start;}
+.contact-info-items{display:flex;flex-direction:column;gap:1rem;margin-top:2.5rem;}
+.ci-item{display:flex;gap:1rem;align-items:flex-start;padding:1.1rem 1.2rem;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;transition:border-color .2s,background .3s;}
+.ci-item:hover{border-color:var(--teal);}
+.ci-icon-wrap{width:38px;height:38px;flex-shrink:0;background:var(--teal-light);border-radius:9px;display:flex;align-items:center;justify-content:center;}
+.ci-icon-wrap svg{width:18px;height:18px;stroke:var(--teal);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.ci-label{font-size:.67rem;text-transform:uppercase;letter-spacing:.1em;color:var(--teal);font-weight:600;margin-bottom:.2rem;}
+.ci-value{font-size:.88rem;color:var(--text);font-weight:500;}
+.ci-value a{color:var(--text);transition:color .2s;}
+.ci-value a:hover{color:var(--teal);}
+.contact-form{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2.5rem;box-shadow:var(--shadow-sm);transition:background .3s,border-color .3s;}
+.form-heading{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--text);margin-bottom:.3rem;}
+.form-sub{font-size:.85rem;color:var(--text-muted);margin-bottom:2rem;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.form-group{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem;}
+.form-label{font-size:.75rem;font-weight:600;color:var(--text-mid);letter-spacing:.04em;}
+.form-input,.form-select,.form-textarea{background:var(--bg-alt);border:1.5px solid var(--border);color:var(--text);font-family:'DM Sans',sans-serif;font-size:.9rem;padding:.72rem 1rem;border-radius:8px;outline:none;width:100%;transition:border-color .2s,background .2s,color .3s;}
+.form-input::placeholder,.form-textarea::placeholder{color:var(--text-muted);}
+.form-input:focus,.form-textarea:focus,.form-select:focus{border-color:var(--teal);background:var(--bg-card);}
+.form-textarea{resize:vertical;min-height:110px;}
+.form-select option{background:var(--bg-card);color:var(--text);}
+.btn-send{width:100%;padding:.95rem;background:var(--teal);color:#fff;font-family:'DM Sans',sans-serif;font-weight:600;font-size:.95rem;border:none;border-radius:8px;cursor:pointer;margin-top:.5rem;display:flex;align-items:center;justify-content:center;gap:.5rem;transition:background .2s,transform .15s,box-shadow .2s;}
+.btn-send:hover{background:var(--blue);transform:translateY(-1px);box-shadow:0 6px 20px rgba(47,100,130,.28);}
+.btn-send svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.form-note{font-size:.72rem;color:var(--text-muted);text-align:center;margin-top:.8rem;}
+.gdpr-link{color:var(--teal);cursor:pointer;text-decoration:underline;}
+
+/* ═══ TOAST ═══ */
+.toast{position:fixed;bottom:7rem;right:2rem;z-index:2000;color:#fff;padding:1rem 1.5rem;border-radius:10px;font-size:.88rem;font-weight:500;box-shadow:var(--shadow-lg);display:none;align-items:center;gap:.6rem;max-width:320px;}
+.toast.show{display:flex;}
+.toast svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+
+/* ═══ GDPR MODAL ═══ */
+.modal-overlay{display:none;position:fixed;inset:0;z-index:1000;background:rgba(10,20,30,.6);backdrop-filter:blur(5px);align-items:center;justify-content:center;padding:2rem;}
+.modal-overlay.open{display:flex;}
+.modal-box{background:var(--bg-card);border:1px solid var(--border);border-radius:18px;padding:2.5rem;max-width:680px;width:100%;max-height:82vh;overflow-y:auto;position:relative;box-shadow:var(--shadow-lg);transition:background .3s,border-color .3s;}
+.modal-close{position:absolute;top:1.2rem;right:1.2rem;background:var(--bg-alt);border:1px solid var(--border);border-radius:8px;width:32px;height:32px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+.modal-close:hover{background:var(--border);}
+.modal-close svg{width:16px;height:16px;stroke:var(--text-muted);fill:none;stroke-width:2;stroke-linecap:round;}
+.modal-title{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--text);margin-bottom:.3rem;}
+.modal-subtitle{font-size:.82rem;color:var(--text-muted);margin-bottom:2rem;}
+.gdpr-section{margin-bottom:1.8rem;}
+.gdpr-section h3{font-size:.9rem;font-weight:600;color:var(--text);margin-bottom:.6rem;padding-bottom:.4rem;border-bottom:1px solid var(--border);}
+.gdpr-section p,.gdpr-section li{font-size:.82rem;color:var(--text-muted);line-height:1.7;}
+.gdpr-section ul{padding-left:1.2rem;}
+.gdpr-section li{margin-bottom:.35rem;}
+.gdpr-section strong{color:var(--text);}
+.gdpr-table{width:100%;border-collapse:collapse;font-size:.77rem;margin-top:.6rem;}
+.gdpr-table th{background:var(--bg-alt);padding:.6rem .8rem;text-align:left;font-weight:600;color:var(--text-mid);border:1px solid var(--border);}
+.gdpr-table td{padding:.55rem .8rem;border:1px solid var(--border);color:var(--text-muted);}
+
+/* ═══ FOOTER ═══ */
+footer{background:#0F1A22;color:rgba(255,255,255,.55);padding:2.8rem 5%;}
+[data-theme="dark"] footer{background:#182838;}
+.footer-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:1.2rem;}
+.footer-logo{font-family:'DM Serif Display',serif;font-size:1.2rem;color:#fff;}
+.footer-logo em{color:var(--teal);font-style:normal;}
+.footer-copy{font-size:.78rem;}
+.footer-links{display:flex;gap:1.5rem;list-style:none;}
+.footer-links a{color:rgba(255,255,255,.45);font-size:.78rem;cursor:pointer;transition:color .2s;}
+.footer-links a:hover{color:var(--teal);}
+.footer-bottom{display:flex;align-items:center;justify-content:center;gap:.6rem;opacity:.5;}
+.footer-bottom svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.footer-bottom span{font-size:.72rem;letter-spacing:.03em;}
+.footer-bottom a{color:rgba(255,255,255,.6);text-decoration:underline;text-underline-offset:3px;transition:color .2s;}
+.footer-bottom a:hover{color:var(--teal);}
+
+/* ═══ REVEAL ═══ */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* ═══ LANG ═══ */
+[data-lang="en"] .lang-hu{display:none;}
+[data-lang="hu"] .lang-en{display:none;}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:1100px){
+  .services-grid{grid-template-columns:repeat(2,1fr);}
+  .about-intro-card{grid-template-columns:1fr;}
+  .aic-stats{justify-content:flex-start;}
+  .about-body{grid-template-columns:1fr;}
+  .testi-grid{grid-template-columns:repeat(2,1fr);}
+  .hero-inner{grid-template-columns:1fr;gap:3rem;}
+  .stat-cards{grid-template-columns:repeat(3,1fr);}
+  .contact-grid{grid-template-columns:1fr;gap:3rem;}
+  .process-intro{grid-template-columns:1fr;gap:2.5rem;}
+  .specialty-inner{grid-template-columns:1fr 1fr;}
+  .metrics-row{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none;}
+  .nav-hamburger{display:flex;}
+  .nav-actions{margin-left:auto;}
+  .section-wrap{padding:5rem 4%;}
+  #hero{padding:100px 4% 60px;}
+  .services-grid{grid-template-columns:1fr;}
+  .testi-grid{grid-template-columns:1fr;}
+  .process-steps-visual{grid-template-columns:1fr;}
+  .stat-cards{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+  .section-header{margin-bottom:2.5rem;}
+  .hero-actions{flex-direction:column;}
+  .hero-actions .btn-fill,.hero-actions .btn-outline{width:100%;justify-content:center;}
+  .specialty-inner{grid-template-columns:1fr;}
+  .sp-inner{grid-template-columns:1fr;gap:1.5rem;max-width:360px;}
+  .sp-divider{display:none;}
+  .sp-item{background:rgba(255,255,255,.04);border-radius:12px;padding:1rem 1.2rem;}
+  .about-intro-card{padding:2rem 1.5rem;}
+  .aic-stats{flex-wrap:wrap;gap:1.5rem;}
+  .aic-stat-sep{display:none;}
+  .footer-top{flex-direction:column;text-align:center;align-items:center;}
+}
+@media(max-width:480px){
+  .hl-grid{grid-template-columns:1fr;}
+  .lang-toggle{display:none;}
+  .modal-box{padding:1.8rem 1.4rem;}
+  .metrics-row{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">Tudatos<em>AI</em></a>
+  <ul class="nav-links">
+    <li><a href="#services"><span class="lang-hu">Szolgáltatások</span><span class="lang-en">Services</span></a></li>
+    <li><a href="#about"><span class="lang-hu">Rólunk</span><span class="lang-en">About</span></a></li>
+    <li><a href="#process"><span class="lang-hu">Hogyan dolgozunk</span><span class="lang-en">Our Process</span></a></li>
+    <li><a href="#testimonials"><span class="lang-hu">Vélemények</span><span class="lang-en">Reviews</span></a></li>
+    <li><a href="/blog/">Blog</a></li>
+  </ul>
+  <div class="nav-actions">
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btnHu" onclick="setLang('hu')">HU</button>
+      <button class="lang-btn" id="btnEn" onclick="setLang('en')">EN</button>
+    </div>
+    <button class="dark-toggle" type="button" onclick="toggleDark()" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <a href="#contact" class="nav-cta"><span class="lang-hu">Kapcsolat</span><span class="lang-en">Contact</span></a>
+    <button class="nav-hamburger" id="hamburger" type="button" aria-label="Menu" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#services" onclick="closeMobileNav()"><span class="lang-hu">Szolgáltatások</span><span class="lang-en">Services</span></a>
+  <a href="#about" onclick="closeMobileNav()"><span class="lang-hu">Rólunk</span><span class="lang-en">About</span></a>
+  <a href="#process" onclick="closeMobileNav()"><span class="lang-hu">Hogyan dolgozunk</span><span class="lang-en">Our Process</span></a>
+  <a href="#testimonials" onclick="closeMobileNav()"><span class="lang-hu">Vélemények</span><span class="lang-en">Reviews</span></a>
+  <a href="/blog/" onclick="closeMobileNav()">Blog</a>
+  <a href="#contact" class="btn-fill" style="justify-content:center" onclick="closeMobileNav()"><span class="lang-hu">Kapcsolat</span><span class="lang-en">Contact</span></a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-blob-1"></div>
+  <div class="hero-blob-2"></div>
+  <div class="hero-inner">
+    <div class="reveal">
+      <div class="hero-badge"><span class="badge-dot"></span>
+        <span class="lang-hu">AI Tanácsadás & Implementáció · Magyarország</span>
+        <span class="lang-en">AI Consulting & Implementation · Hungary</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="lang-hu">Az AI nem a jövő —<br><span class="accent">a mostani versenyelőny.</span></span>
+        <span class="lang-en">AI isn't the future —<br><span class="accent">it's today's edge.</span></span>
+      </h1>
+      <p class="hero-desc lang-hu">Segítünk vállalkozásodnak megérteni, integrálni és kiaknázni a mesterséges intelligenciában rejlő lehetőségeket — stratégiai szemlélettel, mérhető eredményekkel.</p>
+      <p class="hero-desc lang-en">We help your business understand, integrate and unlock the potential of AI — with strategic thinking and measurable results.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-fill">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span class="lang-hu">Első ingyenes konzultációt kérek</span>
+          <span class="lang-en">Request a free consultation</span>
+        </a>
+        <a href="#about" class="btn-outline">
+          <span class="lang-hu">A mi történetünk</span>
+          <span class="lang-en">Our story</span>
+        </a>
+      </div>
+    </div>
+    <div class="stat-cards reveal" style="transition-delay:.2s">
+      <div class="stat-card">
+        <div class="stat-num">50<span class="stat-unit">+</span></div>
+        <div class="stat-label lang-hu">Sikeres projekt</div>
+        <div class="stat-label lang-en">Successful projects</div>
+      </div>
+      <div class="stat-card featured">
+        <div class="stat-num">15<span class="stat-unit">×</span></div>
+        <div class="stat-label lang-hu">Hatékonyság növelés</div>
+        <div class="stat-label lang-en">Efficiency increase</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">97<span class="stat-unit">%</span></div>
+        <div class="stat-label lang-hu">Partner-megtartás</div>
+        <div class="stat-label lang-en">Client retention</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section-wrap alt" id="services">
+  <div class="section-header reveal">
+    <span class="section-eyebrow lang-hu">Szolgáltatásaink</span>
+    <span class="section-eyebrow lang-en">Our Services</span>
+    <h2 class="section-title"><span class="lang-hu">AI megoldások minden szinten</span><span class="lang-en">AI solutions at every level</span></h2>
+    <p class="section-desc lang-hu">Nem sablonokat adunk — személyre szabott AI stratégiát és implementációt, ami valóban működik a te vállalkozásodban.</p>
+    <p class="section-desc lang-en">We don't offer templates — we deliver tailored AI strategy and implementation that genuinely works for your business.</p>
+  </div>
+  <div class="services-grid">
+    <div class="svc-card reveal">
+      <div class="svc-num">01</div>
+      <div class="icon-box"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+      <div class="svc-title lang-hu">AI Stratégia & Audit</div>
+      <div class="svc-title lang-en">AI Strategy & Audit</div>
+      <p class="svc-desc lang-hu">Felmérjük vállalkozásod folyamatait és azonosítjuk, hol tud az AI valódi, mérhető értéket teremteni.</p>
+      <p class="svc-desc lang-en">We assess your processes and identify where AI can create real, measurable value.</p>
+      <div class="svc-tags"><span class="chip">GAP analízis</span><span class="chip">Roadmap</span><span class="chip">ROI</span></div>
+    </div>
+    <div class="svc-card reveal" style="transition-delay:.1s">
+      <div class="svc-num">02</div>
+      <div class="icon-box"><svg viewBox="0 0 24 24"><polyline points="13 2 13 9 20 9"/><path d="M20 14v7H4V3h9"/><line x1="9" y1="17" x2="9" y2="13"/><line x1="12" y1="17" x2="12" y2="11"/><line x1="15" y1="17" x2="15" y2="15"/></svg></div>
+      <div class="svc-title lang-hu">AI Implementáció</div>
+      <div class="svc-title lang-en">AI Implementation</div>
+      <p class="svc-desc lang-hu">Bevezetjük és testreszabjuk a legjobb AI eszközöket — ChatGPT, Copilot, egyedi LLM megoldások.</p>
+      <p class="svc-desc lang-en">We deploy and customise the best AI tools for your workflows — ChatGPT, Copilot, bespoke LLMs.</p>
+      <div class="svc-tags"><span class="chip">ChatGPT</span><span class="chip">LLM</span><span class="chip">Integráció</span></div>
+    </div>
+    <div class="svc-card reveal" style="transition-delay:.2s">
+      <div class="svc-num">03</div>
+      <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+      <div class="svc-title lang-hu">AI Tréning & Workshopok</div>
+      <div class="svc-title lang-en">AI Training & Workshops</div>
+      <p class="svc-desc lang-hu">Csapatodat megtanítjuk hatékonyan használni az AI eszközöket — kezdőktől haladókig.</p>
+      <p class="svc-desc lang-en">We teach your team to use AI tools effectively — from beginners to advanced users.</p>
+      <div class="svc-tags"><span class="chip">Prompt eng.</span><span class="chip">Workshop</span><span class="chip">E-learning</span></div>
+    </div>
+    <div class="svc-card reveal" style="transition-delay:.3s">
+      <div class="svc-num">04</div>
+      <div class="icon-box"><svg viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></div>
+      <div class="svc-title lang-hu">Folyamat Automatizáció</div>
+      <div class="svc-title lang-en">Process Automation</div>
+      <p class="svc-desc lang-hu">Azonosítjuk és automatizáljuk az ismétlődő feladatokat — energiát szabadítunk fel arra, ami értéket teremt.</p>
+      <p class="svc-desc lang-en">We identify and automate repetitive tasks — freeing energy for what truly creates value.</p>
+      <div class="svc-tags"><span class="chip">No-code</span><span class="chip">API</span><span class="chip">Workflow</span></div>
+    </div>
+    <div class="svc-card reveal" style="transition-delay:.4s">
+      <div class="svc-num">05</div>
+      <div class="icon-box"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><path d="M2 20h20"/></svg></div>
+      <div class="svc-title lang-hu">AI Adatelemzés</div>
+      <div class="svc-title lang-en">AI Data Analytics</div>
+      <p class="svc-desc lang-hu">Üzleti adataidból értékes insightokat nyerünk — prediktív elemzések és döntéstámogató dashboardok.</p>
+      <p class="svc-desc lang-en">We extract valuable insights from your data — predictive analyses and decision-support dashboards.</p>
+      <div class="svc-tags"><span class="chip">BI</span><span class="chip">Prediktív</span><span class="chip">Dashboard</span></div>
+    </div>
+    <div class="svc-card reveal" style="transition-delay:.5s">
+      <div class="svc-num">06</div>
+      <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="svc-title lang-hu">Etikus AI & Compliance</div>
+      <div class="svc-title lang-en">Ethical AI & Compliance</div>
+      <p class="svc-desc lang-hu">Segítünk az EU AI Act és GDPR szabályozásnak megfelelő, etikus és biztonságos AI bevezetésében.</p>
+      <p class="svc-desc lang-en">We help you deploy AI ethically in compliance with EU AI Act and GDPR regulations.</p>
+      <div class="svc-tags"><span class="chip">EU AI Act</span><span class="chip">GDPR</span><span class="chip">Risk mgmt</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALTIES -->
+<div class="specialty-band">
+  <div class="specialty-header reveal">
+    <span class="section-eyebrow lang-hu">Szakterületeink</span>
+    <span class="section-eyebrow lang-en">Our Specialities</span>
+    <h2 class="section-title lang-hu">Mélyspecializáció, ahol számít</h2>
+    <h2 class="section-title lang-en">Deep specialisation where it counts</h2>
+    <p class="section-desc lang-hu">Három kulcsterületen kínálunk iparági szintű fejlesztési, építési és üzemeltetési tapasztalatot.</p>
+    <p class="section-desc lang-en">Industry-level development, build and operations expertise across three key domains.</p>
+  </div>
+  <div class="specialty-inner reveal">
+    <div class="spec-item">
+      <div class="spec-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 8h.01M11 8h6"/><path d="M7 12h.01M11 12h6"/></svg></div>
+      <div class="spec-title">ERP</div>
+      <p class="spec-desc lang-hu">Vállalati erőforrás-tervező rendszerek fejlesztése, testreszabása és folyamatos üzemeltetése — AI-alapú automatizációval kiegészítve.</p>
+      <p class="spec-desc lang-en">Development, customisation and ongoing operations of enterprise resource planning systems — augmented with AI automation.</p>
+    </div>
+    <div class="spec-item">
+      <div class="spec-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <div class="spec-title">CRM</div>
+      <p class="spec-desc lang-hu">Ügyfélkapcsolat-kezelő rendszerek kiépítése és integrációja — intelligens lead-kezeléssel és automatizált ügyfélkommunikációval.</p>
+      <p class="spec-desc lang-en">Building and integrating CRM systems with intelligent lead management and automated client communication.</p>
+    </div>
+    <div class="spec-item">
+      <div class="spec-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg></div>
+      <div class="spec-title">ATS</div>
+      <p class="spec-desc lang-hu">Toborzáskezelő rendszerek fejlesztése — AI-alapú jelöltszűréssel és automatizált HR folyamatokkal.</p>
+      <p class="spec-desc lang-en">Applicant tracking system development with AI-powered candidate screening and automated HR workflows.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section-wrap" id="about">
+  <!-- Top intro card -->
+  <div class="about-intro-card reveal">
+    <div class="aic-left">
+      <div class="card-eyebrow lang-hu">Saját bőrünkön tapasztaltuk</div>
+      <div class="card-eyebrow lang-en">Experienced first-hand</div>
+      <div class="card-heading lang-hu">Belülről ismerjük az AI bevezetés kihívásait</div>
+      <div class="card-heading lang-en">We know the challenges of AI adoption from the inside</div>
+      <p class="card-body lang-hu">Nem tankönyvből tanultuk — végigcsináltuk. Saját cégünket tettük az AI kísérlet terepévé, és az eredmények lenyűgöztek minket.</p>
+      <p class="card-body lang-en">We didn't learn it from a textbook — we lived it. We used our own company as the AI testing ground, and the results blew us away.</p>
+    </div>
+    <div class="aic-stats">
+      <div class="aic-stat">
+        <div class="aic-num">15<span class="aic-unit">×</span></div>
+        <div class="aic-lbl lang-hu">hatékonyság növekedés</div>
+        <div class="aic-lbl lang-en">efficiency increase</div>
+      </div>
+      <div class="aic-stat-sep"></div>
+      <div class="aic-stat">
+        <div class="aic-num" style="font-size:2rem">3 <span class="aic-unit" style="font-size:1.1rem"><span class="lang-hu">hónap</span><span class="lang-en">months</span></span></div>
+        <div class="aic-lbl lang-hu">átlagos ROI megtérülés</div>
+        <div class="aic-lbl lang-en">average ROI payback</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Story + highlights -->
+  <div class="about-body">
+    <div class="reveal">
+      <div class="section-header" style="margin-bottom:1.5rem">
+        <span class="section-eyebrow lang-hu">A mi történetünk</span>
+        <span class="section-eyebrow lang-en">Our Story</span>
+        <h2 class="section-title"><span class="lang-hu">Nem eladunk — megmutatjuk, mi működik</span><span class="lang-en">We don't sell — we show what works</span></h2>
+        <p class="section-desc lang-hu">A TudatosAI a <a href="https://tdhr.hu" target="_blank" style="color:var(--teal);text-decoration:underline;">TDHR Group</a> tagja. Nem hagyományos tanácsadó cégként indultunk — saját vállalkozásunkon próbáltuk ki az AI erejét, és a tapasztalatokat visszük most más cégekhez.</p>
+        <p class="section-desc lang-en">TudatosAI is a member of <a href="https://tdhr.hu" target="_blank" style="color:var(--teal);text-decoration:underline;">TDHR Group</a>. We didn't start as a traditional consultancy — we tested AI on our own business first and bring those lessons to other companies.</p>
+      </div>
+      <div class="about-timeline">
+        <div class="tl-item">
+          <div class="tl-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div>
+            <div class="tl-title lang-hu">Saját céggel kezdtük</div>
+            <div class="tl-title lang-en">Started with our own company</div>
+            <p class="tl-desc lang-hu">Eredetileg a saját vállalkozásunkba vezettük be az AI megoldásokat — szkeptikusan, kísérletként. Az első eredmények után nem volt visszaút.</p>
+            <p class="tl-desc lang-en">We originally introduced AI into our own company — sceptically, as an experiment. After the first results, there was no going back.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg></div>
+          <div>
+            <div class="tl-title lang-hu">Teljes digitalizáció & automatizáció</div>
+            <div class="tl-title lang-en">Full digitisation & automation</div>
+            <p class="tl-desc lang-hu">Lépésről lépésre automatizáltuk az ügyfélkezelést, kommunikációt, riportálást és adminisztrációt. A csapatunk valóban fontos munkára koncentrálhatott.</p>
+            <p class="tl-desc lang-en">Step by step, we automated client management, communications, reporting and administration. Our team could focus on what truly mattered.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div>
+            <div class="tl-title lang-hu">Most más cégeknek is segítünk</div>
+            <div class="tl-title lang-en">Now we help other companies too</div>
+            <p class="tl-desc lang-hu">Amit saját magunkon kipróbáltunk és tökéletesítettünk, azt visszük el más vállalkozásokhoz. Nem elméletet tanítunk — bevált módszertant adunk át.</p>
+            <p class="tl-desc lang-en">What we tested and perfected on ourselves, we now bring to other businesses. We don't teach theory — we transfer proven methodology.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hl-grid reveal" style="transition-delay:.15s">
+      <div class="hl-item">
+        <div class="hl-icon-wrap"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="hl-title lang-hu">Eredmény-orientált</div>
+        <div class="hl-title lang-en">Results-driven</div>
+        <div class="hl-text lang-hu">Csak mérhető, valós üzleti értéket teremtő megoldásokat javaslunk</div>
+        <div class="hl-text lang-en">We only recommend solutions that create measurable, real business value</div>
+      </div>
+      <div class="hl-item">
+        <div class="hl-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <div class="hl-title lang-hu">Országos & globális lefedettség</div>
+        <div class="hl-title lang-en">National & global coverage</div>
+        <div class="hl-text lang-hu">Bárhol tudunk segíteni — határokon belül és azon túl is</div>
+        <div class="hl-text lang-en">We can serve clients anywhere — nationally and beyond borders</div>
+      </div>
+      <div class="hl-item">
+        <div class="hl-icon-wrap"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="23" y1="11" x2="17" y2="11"/><line x1="20" y1="8" x2="20" y2="14"/></svg></div>
+        <div class="hl-title lang-hu">Hosszú távú partner</div>
+        <div class="hl-title lang-en">Long-term partner</div>
+        <div class="hl-text lang-hu">Nem egyszeri projekt — folyamatos támogatás és fejlesztés</div>
+        <div class="hl-text lang-en">Not a one-off project — continuous support and development</div>
+      </div>
+      <div class="hl-item">
+        <div class="hl-icon-wrap"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="hl-title lang-hu">Biztonság & etika</div>
+        <div class="hl-title lang-en">Security & ethics</div>
+        <div class="hl-text lang-hu">Adatvédelem és felelős AI minden megoldásunk alapja</div>
+        <div class="hl-text lang-en">Data protection and responsible AI underpin every solution</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section" id="process">
+  <div class="process-intro">
+    <div>
+      <span class="section-eyebrow lang-hu">Hogyan dolgozunk</span>
+      <span class="section-eyebrow lang-en">How We Work</span>
+      <h2 class="section-title reveal"><span class="lang-hu">Négy lépés a mérhető eredményig</span><span class="lang-en">Four steps to measurable results</span></h2>
+      <p class="section-desc reveal lang-hu">Strukturált, átlátható folyamattal dolgozunk — mindig tudod, mi történik és mikor. Minden projekt mérföldkövekkel és KPI-okkal van dokumentálva.</p>
+      <p class="section-desc reveal lang-en">We work with a structured, transparent process — you always know what's happening and when. Every project is documented with milestones and KPIs.</p>
+    </div>
+    <div class="metrics-row">
+      <div class="metric-card reveal">
+        <div class="metric-num">15×</div>
+        <div class="metric-label lang-hu">átlagos hatékonyság-növekedés</div>
+        <div class="metric-label lang-en">avg. efficiency increase</div>
+        <div class="metric-sub lang-hu">saját méréseink alapján</div>
+        <div class="metric-sub lang-en">based on our own data</div>
+      </div>
+      <div class="metric-card reveal" style="transition-delay:.1s">
+        <div class="metric-num" style="font-size:1.5rem">3 hónap</div>
+        <div class="metric-label lang-hu">átlagos ROI megtérülési idő</div>
+        <div class="metric-label lang-en">avg. ROI payback period</div>
+        <div class="metric-sub lang-hu">az első implementációtól</div>
+        <div class="metric-sub lang-en">from first implementation</div>
+      </div>
+      <div class="metric-card reveal" style="transition-delay:.2s">
+        <div class="metric-num">50+</div>
+        <div class="metric-label lang-hu">lezárt projekt</div>
+        <div class="metric-label lang-en">completed projects</div>
+        <div class="metric-sub">ERP, CRM, ATS, AI</div>
+      </div>
+      <div class="metric-card reveal" style="transition-delay:.3s">
+        <div class="metric-num">97%</div>
+        <div class="metric-label lang-hu">partner-megtartási arány</div>
+        <div class="metric-label lang-en">client retention rate</div>
+        <div class="metric-sub lang-hu">folyamatos együttműködés</div>
+        <div class="metric-sub lang-en">ongoing partnerships</div>
+      </div>
+    </div>
+  </div>
+  <div class="process-steps-visual reveal">
+    <div class="ps-card">
+      <div class="ps-card-accent"></div>
+      <div class="ps-num">01</div>
+      <div class="ps-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+      <div class="ps-title lang-hu">Felmérés & Diagnózis</div>
+      <div class="ps-title lang-en">Assessment & Diagnosis</div>
+      <p class="ps-desc lang-hu">Megismerjük vállalkozásodat, folyamataidat, céljaidat. Meghatározzuk, hol van a legnagyobb lehetőség az AI alkalmazására.</p>
+      <p class="ps-desc lang-en">We get to know your business, processes and goals. We identify where AI has the greatest potential.</p>
+    </div>
+    <div class="ps-card">
+      <div class="ps-card-accent"></div>
+      <div class="ps-num">02</div>
+      <div class="ps-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+      <div class="ps-title lang-hu">Stratégia & Tervezés</div>
+      <div class="ps-title lang-en">Strategy & Planning</div>
+      <p class="ps-desc lang-hu">Személyre szabott AI roadmapet készítünk — prioritásokkal, időkeretekkel, várható ROI-val.</p>
+      <p class="ps-desc lang-en">We create a bespoke AI roadmap — with priorities, timelines and projected ROI.</p>
+    </div>
+    <div class="ps-card">
+      <div class="ps-card-accent"></div>
+      <div class="ps-num">03</div>
+      <div class="ps-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+      <div class="ps-title lang-hu">Bevezetés & Tréning</div>
+      <div class="ps-title lang-en">Implementation & Training</div>
+      <p class="ps-desc lang-hu">Implementáljuk a megoldásokat és betanítjuk csapatodat, hogy mindenki magabiztosan használja az új eszközöket.</p>
+      <p class="ps-desc lang-en">We implement solutions and train your team so everyone uses the new tools with confidence.</p>
+    </div>
+    <div class="ps-card">
+      <div class="ps-card-accent"></div>
+      <div class="ps-num">04</div>
+      <div class="ps-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <div class="ps-title lang-hu">Mérés & Optimalizáció</div>
+      <div class="ps-title lang-en">Measurement & Optimisation</div>
+      <p class="ps-desc lang-hu">Folyamatosan mérjük az eredményeket és finomítjuk a megoldásokat — hogy a befektetés megtérülése növekedjen.</p>
+      <p class="ps-desc lang-en">We continuously measure results and refine solutions — so your return on investment keeps growing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF BAND -->
+<div class="social-proof-band">
+  <div class="sp-inner reveal">
+    <div class="sp-item">
+      <div class="sp-icon-wrap">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <div class="sp-content">
+        <div class="sp-stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span class="sp-score">5.0</span>
+        </div>
+        <div class="sp-val lang-hu">256 Google-értékelés</div>
+        <div class="sp-val lang-en">256 Google reviews</div>
+      </div>
+    </div>
+    <div class="sp-divider"></div>
+    <div class="sp-item">
+      <div class="sp-icon-wrap">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="23" y1="11" x2="17" y2="11"/><line x1="20" y1="8" x2="20" y2="14"/></svg>
+      </div>
+      <div class="sp-content">
+        <div class="sp-big">97<span class="sp-unit">%</span></div>
+        <div class="sp-val lang-hu">Partner-megtartási arány</div>
+        <div class="sp-val lang-en">Client retention rate</div>
+      </div>
+    </div>
+    <div class="sp-divider"></div>
+    <div class="sp-item">
+      <div class="sp-icon-wrap">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <div class="sp-content">
+        <div class="sp-big lang-hu" style="font-size:1.5rem">Országos & globális</div>
+        <div class="sp-big lang-en" style="font-size:1.5rem">National & global</div>
+        <div class="sp-val lang-hu">lefedettség</div>
+        <div class="sp-val lang-en">coverage</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="section-wrap" id="testimonials">
+  <div class="section-header reveal">
+    <span class="section-eyebrow lang-hu">Vélemények</span>
+    <span class="section-eyebrow lang-en">Testimonials</span>
+    <h2 class="section-title"><span class="lang-hu">Amit ügyfeleink mondanak</span><span class="lang-en">What our clients say</span></h2>
+    <p class="section-desc lang-hu">Valódi eredmények, valódi vállalkozóktól — akik már megtették a lépést.</p>
+    <p class="section-desc lang-en">Real results from real business leaders — who have already taken the step.</p>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal">
+      <div class="testi-stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p class="testi-text lang-hu">„A TudatosAI bevezette az AI-t a HR folyamatainkba, és 40%-kal csökkent az adminisztratív terhünk. A csapatom most a valódi emberekkel való kapcsolatra koncentrálhat, nem az Excel táblákra."</p>
+      <p class="testi-text lang-en">"TudatosAI introduced AI into our HR processes and reduced our administrative burden by 40%. My team can now focus on real human connections, not spreadsheets."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">KD</div>
+        <div>
+          <div class="testi-name">Kuli Dorina</div>
+          <div class="testi-company">TDHR Group</div>
+          <div class="testi-role lang-hu">Értékesítési vezető</div>
+          <div class="testi-role lang-en">Head of Sales</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal" style="transition-delay:.15s">
+      <div class="testi-stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p class="testi-text lang-hu">„A toborzási folyamatunkba bevezetett AI eszközök teljesen átalakították a munkánkat. A jelöltek előszűrése és az első körös kommunikáció automatizálva van — sokkal több időnk maradt a személyes kapcsolatokra."</p>
+      <p class="testi-text lang-en">"The AI tools introduced into our recruitment process completely transformed our work. Candidate screening and first-round communication are automated — we have far more time for personal connections."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">GA</div>
+        <div>
+          <div class="testi-name">Galgóczi Anna</div>
+          <div class="testi-company">Tudatos Diák Iskolaszövetkezet</div>
+          <div class="testi-role lang-hu">Toborzási vezető</div>
+          <div class="testi-role lang-en">Head of Recruitment</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal" style="transition-delay:.3s">
+      <div class="testi-stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p class="testi-text lang-hu">„Pénzügyi riportjaink elkészítési ideje 80%-kal csökkent az AI bevezetése után. A havi zárás, ami korábban 3 napot vett igénybe, most fél nap. Az ROI az első negyedévben megtérült."</p>
+      <p class="testi-text lang-en">"Time to produce our financial reports dropped by 80% after AI adoption. Month-end close that used to take 3 days now takes half a day. ROI was recovered within the first quarter."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">VG</div>
+        <div>
+          <div class="testi-name">Varga Gábor</div>
+          <div class="testi-company">T-Cloud Solutions Kft.</div>
+          <div class="testi-role lang-hu">Pénzügyi vezető</div>
+          <div class="testi-role lang-en">CFO</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section-wrap alt" id="contact">
+  <div class="contact-grid">
+    <div class="reveal">
+      <span class="section-eyebrow lang-hu">Kapcsolat</span>
+      <span class="section-eyebrow lang-en">Contact</span>
+      <h2 class="section-title" style="margin-top:.5rem"><span class="lang-hu">Kezdjük el együtt</span><span class="lang-en">Let's start together</span></h2>
+      <p class="section-desc lang-hu">Egy ingyenes konzultációval kiderítjük, hol és hogyan segíthet az AI. Nincs elköteleződés — csak értékes megbeszélés.</p>
+      <p class="section-desc lang-en">A free consultation will reveal where and how AI can help. No commitment — just a valuable conversation.</p>
+      <div class="contact-info-items">
+        <div class="ci-item">
+          <div class="ci-icon-wrap"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div>
+            <div class="ci-label">Email</div>
+            <div class="ci-value"><a href="mailto:hello@tudatosai.hu">hello@tudatosai.hu</a></div>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon-wrap"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div>
+            <div class="ci-label lang-hu">Telefon</div>
+            <div class="ci-label lang-en">Phone</div>
+            <div class="ci-value"><a href="tel:+36705678948">+36 70 567 8948</a></div>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon-wrap"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <div class="ci-label lang-hu">Iroda</div>
+            <div class="ci-label lang-en">Office</div>
+            <div class="ci-value lang-hu">Alphagon Irodaház, Budapest</div>
+            <div class="ci-value lang-en">Alphagon Office Building, Budapest</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form reveal" style="transition-delay:.2s">
+      <div class="form-heading lang-hu">Írj nekünk</div>
+      <div class="form-heading lang-en">Send us a message</div>
+      <div class="form-sub lang-hu">Általában 24 órán belül visszajelzünk.</div>
+      <div class="form-sub lang-en">We typically respond within 24 hours.</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label lang-hu">Teljes név *</label>
+          <label class="form-label lang-en">Full name *</label>
+          <input type="text" id="fname" class="form-input" placeholder="Kovács Béla">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email *</label>
+          <input type="email" id="femail" class="form-input" placeholder="bela@ceg.hu">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label lang-hu">Cég neve</label>
+        <label class="form-label lang-en">Company name</label>
+        <input type="text" id="fcompany" class="form-input" placeholder="Cég Kft.">
+      </div>
+      <div class="form-group">
+        <label class="form-label lang-hu">Miben segíthetünk?</label>
+        <label class="form-label lang-en">How can we help?</label>
+        <select id="fservice" class="form-select">
+          <option value="">Válassz kategóriát... / Select category...</option>
+          <option>AI Stratégia &amp; Audit</option>
+          <option>AI Implementáció</option>
+          <option>Tréning &amp; Workshop</option>
+          <option>Folyamat Automatizáció</option>
+          <option>ERP / CRM / ATS fejlesztés</option>
+          <option>Egyéb / Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label lang-hu">Üzenet</label>
+        <label class="form-label lang-en">Message</label>
+        <textarea id="fmessage" class="form-textarea" placeholder="Írj pár szót vállalkozásodról..."></textarea>
+      </div>
+      <button class="btn-send" onclick="sendEmail()">
+        <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        <span class="lang-hu">Üzenet küldése</span>
+        <span class="lang-en">Send message</span>
+      </button>
+      <p class="form-note lang-hu">Az üzenet elküldésével elfogadod az <span class="gdpr-link" onclick="openGdpr()">Adatkezelési tájékoztatónkat</span>.</p>
+      <p class="form-note lang-en">By sending you accept our <span class="gdpr-link" onclick="openGdpr()">Privacy Policy</span>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <a href="#" class="footer-logo">Tudatos<em>AI</em></a>
+    <div class="footer-copy lang-hu">© 2026 TudatosAI – Minden jog fenntartva</div>
+    <div class="footer-copy lang-en">© 2026 TudatosAI – All rights reserved</div>
+    <ul class="footer-links">
+      <li><a onclick="openGdpr()"><span class="lang-hu">Adatkezelési tájékoztató</span><span class="lang-en">Privacy Policy</span></a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="#contact"><span class="lang-hu">Kapcsolat</span><span class="lang-en">Contact</span></a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    <span class="lang-hu">A TudatosAI a <a href="https://tdhr.hu" target="_blank">TDHR Group</a> tagja</span>
+    <span class="lang-en">TudatosAI is a member of <a href="https://tdhr.hu" target="_blank">TDHR Group</a></span>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+  <span id="toastMsg"></span>
+</div>
+
+<!-- GDPR MODAL -->
+<div class="modal-overlay" id="gdprModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeGdpr()"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div class="modal-title lang-hu">Adatkezelési tájékoztató</div>
+    <div class="modal-title lang-en">Privacy Policy</div>
+    <div class="modal-subtitle lang-hu">Hatályos: 2026. január 1. · TudatosAI (tudatosai.hu) · a TDHR Group tagja</div>
+    <div class="modal-subtitle lang-en">Effective: 1 January 2026 · TudatosAI (tudatosai.hu) · member of TDHR Group</div>
+    <div class="gdpr-section">
+      <h3 class="lang-hu">1. Az adatkezelő</h3><h3 class="lang-en">1. Data Controller</h3>
+      <p><strong>TudatosAI</strong> – a TDHR Group tagja<br><strong>Web:</strong> tudatosai.hu<br><strong>Email:</strong> hello@tudatosai.hu<br><strong class="lang-hu">Telefon:</strong><strong class="lang-en">Phone:</strong> +36 70 567 8948<br><strong class="lang-hu">Cégcsoport:</strong><strong class="lang-en">Group:</strong> <a href="https://tdhr.hu" target="_blank" style="color:var(--teal)">TDHR Group (tdhr.hu)</a></p>
+    </div>
+    <div class="gdpr-section">
+      <h3 class="lang-hu">2. Kezelt adatok és célok</h3><h3 class="lang-en">2. Data Processed and Purposes</h3>
+      <table class="gdpr-table">
+        <thead><tr>
+          <th class="lang-hu">Adat</th><th class="lang-en">Data</th>
+          <th class="lang-hu">Cél</th><th class="lang-en">Purpose</th>
+          <th class="lang-hu">Jogalap</th><th class="lang-en">Legal basis</th>
+          <th class="lang-hu">Megőrzés</th><th class="lang-en">Retention</th>
+        </tr></thead>
+        <tbody>
+          <tr><td class="lang-hu">Név, email, telefon</td><td class="lang-en">Name, email, phone</td><td class="lang-hu">Kapcsolatfelvétel</td><td class="lang-en">Contact</td><td>GDPR 6. cikk (a)</td><td class="lang-hu">Ügyintézés + 1 év</td><td class="lang-en">Resolution + 1 yr</td></tr>
+          <tr><td class="lang-hu">Cég, üzenet</td><td class="lang-en">Company, message</td><td class="lang-hu">Ajánlat személyre szabása</td><td class="lang-en">Personalised proposal</td><td>GDPR 6. cikk (a)</td><td class="lang-hu">Ügyintézés + 1 év</td><td class="lang-en">Resolution + 1 yr</td></tr>
+          <tr><td class="lang-hu">IP-cím, böngésző</td><td class="lang-en">IP, browser</td><td class="lang-hu">Biztonság</td><td class="lang-en">Security</td><td>GDPR 6. cikk (f)</td><td>30 <span class="lang-hu">nap</span><span class="lang-en">days</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="gdpr-section">
+      <h3 class="lang-hu">3. Adatmegosztás</h3><h3 class="lang-en">3. Data Sharing</h3>
+      <p class="lang-hu">Személyes adatait harmadik félnek nem értékesítjük. A TudatosAI a TDHR Group tagja; csoporton belüli adatmegosztás kizárólag az érintett hozzájárulásával történik.</p>
+      <p class="lang-en">We do not sell personal data. As a TDHR Group member, intra-group sharing occurs only with consent.</p>
+    </div>
+    <div class="gdpr-section">
+      <h3 class="lang-hu">4. Az érintett jogai</h3><h3 class="lang-en">4. Your Rights</h3>
+      <ul>
+        <li><strong class="lang-hu">Hozzáférés</strong><strong class="lang-en">Access</strong></li>
+        <li><strong class="lang-hu">Helyesbítés</strong><strong class="lang-en">Rectification</strong></li>
+        <li><strong class="lang-hu">Törlés ("elfeledtetési jog")</strong><strong class="lang-en">Erasure ("right to be forgotten")</strong></li>
+        <li><strong class="lang-hu">Korlátozás</strong><strong class="lang-en">Restriction</strong></li>
+        <li><strong class="lang-hu">Adathordozhatóság</strong><strong class="lang-en">Portability</strong></li>
+        <li><strong class="lang-hu">Tiltakozás</strong><strong class="lang-en">Objection</strong></li>
+      </ul>
+      <p style="margin-top:.7rem" class="lang-hu">Kérelmek: <strong>hello@tudatosai.hu</strong> — válaszidő: 30 nap.</p>
+      <p style="margin-top:.7rem" class="lang-en">Requests: <strong>hello@tudatosai.hu</strong> — response: 30 days.</p>
+    </div>
+    <div class="gdpr-section">
+      <h3 class="lang-hu">5. Adatbiztonság</h3><h3 class="lang-en">5. Security</h3>
+      <p class="lang-hu">Titkosított kapcsolat (HTTPS/SSL), EU-területen elhelyezett Rackhost szerver, kétfaktoros hitelesítés.</p>
+      <p class="lang-en">Encrypted connection (HTTPS/SSL), EU-based Rackhost server, two-factor authentication.</p>
+    </div>
+    <div class="gdpr-section">
+      <h3 class="lang-hu">6. Jogorvoslat</h3><h3 class="lang-en">6. Complaints</h3>
+      <p class="lang-hu">NAIH: <strong>naih.hu</strong> · ugyfelszolgalat@naih.hu · +36 1 391-1400</p>
+      <p class="lang-en">NAIH (Hungarian Data Protection Authority): <strong>naih.hu</strong></p>
+    </div>
+    <div class="gdpr-section">
+      <h3>Cookie</h3>
+      <p class="lang-hu">Csak munkamenet-sütik (dark mode, nyelv). Harmadik fél marketing sütiket nem használunk.</p>
+      <p class="lang-en">Only essential session cookies (dark mode, language preference). No third-party marketing cookies.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleDark(){const h=document.documentElement,d=h.getAttribute('data-theme')==='dark';h.setAttribute('data-theme',d?'light':'dark');localStorage.setItem('theme',d?'light':'dark');}
+(function(){const s=localStorage.getItem('theme'),p=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(!s&&p))document.documentElement.setAttribute('data-theme','dark');})();
+function setLang(l){document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l;document.getElementById('btnHu').classList.toggle('active',l==='hu');document.getElementById('btnEn').classList.toggle('active',l==='en');localStorage.setItem('lang',l);}
+(function(){const s=localStorage.getItem('lang')||'hu';document.documentElement.setAttribute('data-lang',s);const b=document.getElementById('btn'+s.charAt(0).toUpperCase()+s.slice(1));if(b)b.classList.add('active');})();
+function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open');document.getElementById('hamburger').classList.toggle('open');}
+function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('hamburger').classList.remove('open');}
+function openGdpr(){document.getElementById('gdprModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeGdpr(){document.getElementById('gdprModal').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('gdprModal').addEventListener('click',function(e){if(e.target===this)closeGdpr();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeGdpr();});
+function showToast(msg,ok){const t=document.getElementById('toast');t.style.background=ok?'var(--teal)':'#e05555';document.getElementById('toastMsg').textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4000);}
+async function sendEmail(){
+  const name=document.getElementById('fname').value.trim();
+  const email=document.getElementById('femail').value.trim();
+  const company=document.getElementById('fcompany').value.trim();
+  const service=document.getElementById('fservice').value;
+  const message=document.getElementById('fmessage').value.trim();
+  const lang=document.documentElement.getAttribute('data-lang');
+  if(!name||!email){showToast(lang==='hu'?'Kérlek add meg a neved és email-ed!':'Please enter your name and email.',false);return;}
+  const btn=document.querySelector('.btn-send');
+  btn.disabled=true;
+  btn.innerHTML='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg><span>'+(lang==='hu'?'Küldés...':'Sending...')+'</span>';
+  try {
+    const res=await fetch('https://formspree.io/f/xpqjjabw',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({name,email,company,service,message})
+    });
+    if(res.ok){
+      showToast(lang==='hu'?'Üzenet elküldve! Hamarosan visszajelzünk.':'Message sent! We\'ll be in touch soon.',true);
+      document.getElementById('fname').value='';
+      document.getElementById('femail').value='';
+      document.getElementById('fcompany').value='';
+      document.getElementById('fservice').value='';
+      document.getElementById('fmessage').value='';
+    } else {
+      showToast(lang==='hu'?'Hiba történt. Kérlek próbáld újra!':'Something went wrong. Please try again.',false);
+    }
+  } catch(e){
+    showToast(lang==='hu'?'Hálózati hiba. Kérlek próbáld újra!':'Network error. Please try again.',false);
+  }
+  btn.disabled=false;
+  btn.innerHTML='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg><span class="lang-hu">Üzenet küldése</span><span class="lang-en">Send message</span>';
+}
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:.09});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+window.addEventListener('scroll',()=>{const secs=document.querySelectorAll('section[id]');let c='';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-100)c=s.id;});document.querySelectorAll('.nav-links a').forEach(a=>{a.style.color=a.getAttribute('href')==='#'+c?'var(--teal)':'';});},{passive:true});
+</script>
+<script src="/chatbot-widget.js"></script>
+</body>
+</html>

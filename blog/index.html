@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="hu" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TudatosAI Blog – AI Stratégia, Automatizáció, Trendek</title>
+<meta name="description" content="A TudatosAI blogja: gyakorlati cikkek AI stratégiáról, üzleti automatizációról, ChatGPT használatról és mesterséges intelligencia trendekről magyar vállalkozásoknak.">
+<link rel="canonical" href="https://tudatosai.hu/blog/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TudatosAI Blog – AI Cikkek Magyar Vállalkozásoknak">
+<meta property="og:description" content="Gyakorlati cikkek AI stratégiáról, automatizációról és üzleti AI trendekről.">
+<meta property="og:url" content="https://tudatosai.hu/blog/">
+<meta property="og:image" content="https://tudatosai.hu/og-image.jpg">
+<meta property="og:locale" content="hu_HU">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "TudatosAI Blog",
+  "url": "https://tudatosai.hu/blog/",
+  "description": "AI stratégia, automatizáció és trendek magyar vállalkozásoknak",
+  "publisher": {
+    "@type": "Organization",
+    "name": "TudatosAI",
+    "url": "https://tudatosai.hu"
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/chatbot-widget.css">
+<style>
+:root {
+  --gold:#D29B01; --gold-light:#F5E8B0; --gold-pale:#FBF5E0;
+  --blue:#2F6482; --blue-light:#EAF2F7;
+  --teal:#46A0A0; --teal-light:#E8F5F5; --teal-dark:#357878;
+  --bg-page:#F8FAFB; --bg-card:#FFFFFF; --bg-alt:#F0F5F7;
+  --bg-nav:rgba(255,255,255,0.94); --border:#DDE7EC;
+  --text:#1E2E38; --text-mid:#3D5260; --text-muted:#6B8290;
+  --shadow-sm:0 2px 10px rgba(47,100,130,.07);
+  --shadow-md:0 8px 28px rgba(47,100,130,.11);
+}
+[data-theme="dark"] {
+  --bg-page:#0F1A22; --bg-card:#162130; --bg-alt:#111D27;
+  --bg-nav:rgba(15,26,34,0.96); --border:#243444;
+  --text:#D8E8F0; --text-mid:#8AAABB; --text-muted:#5A7888;
+  --shadow-sm:0 2px 10px rgba(0,0,0,.25); --shadow-md:0 8px 28px rgba(0,0,0,.35);
+  --blue-light:#1A2D3A; --teal-light:#162828; --gold-pale:#201900;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg-page);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden;transition:background .3s,color .3s;}
+a{text-decoration:none;color:inherit;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--bg-nav);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:68px;display:flex;align-items:center;padding:0 5%;gap:1.5rem;transition:background .3s,border-color .3s;}
+.logo{font-family:'DM Serif Display',serif;font-size:1.45rem;color:var(--text);letter-spacing:-.01em;white-space:nowrap;}
+.logo em{color:var(--teal);font-style:normal;}
+.nav-links{display:flex;gap:1.6rem;list-style:none;align-items:center;margin-left:auto;}
+.nav-links a{color:var(--text-muted);font-size:.875rem;font-weight:500;transition:color .2s;white-space:nowrap;}
+.nav-links a:hover,.nav-links a.active{color:var(--teal);}
+.nav-actions{display:flex;align-items:center;gap:.7rem;flex-shrink:0;}
+.dark-toggle{width:36px;height:36px;background:var(--bg-alt);border:1px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+.dark-toggle:hover{background:var(--border);}
+.dark-toggle svg{width:18px;height:18px;fill:none;stroke:var(--text-muted);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.icon-moon{display:block;} .icon-sun{display:none;}
+[data-theme="dark"] .icon-moon{display:none;} [data-theme="dark"] .icon-sun{display:block;}
+.nav-cta{padding:0 1.2rem;height:36px;background:var(--teal);color:#fff!important;border-radius:8px;font-weight:600!important;font-size:.85rem!important;display:inline-flex;align-items:center;transition:background .2s,transform .15s!important;}
+.nav-cta:hover{background:var(--blue)!important;transform:translateY(-1px);}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;margin-left:auto;background:none;border:none;}
+.nav-hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:transform .3s,opacity .3s;}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-hamburger.open span:nth-child(2){opacity:0;}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-nav{display:none;position:fixed;top:68px;left:0;right:0;z-index:299;background:var(--bg-card);border-bottom:1px solid var(--border);padding:1.5rem 5%;flex-direction:column;gap:1rem;box-shadow:var(--shadow-md);}
+.mobile-nav.open{display:flex;}
+.mobile-nav a{color:var(--text);font-weight:500;padding:.4rem 0;border-bottom:1px solid var(--border);}
+
+/* HERO */
+.blog-hero{padding:120px 5% 60px;background:var(--bg-card);text-align:center;transition:background .3s;}
+.blog-hero-eyebrow{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:.8rem;}
+.blog-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3rem);line-height:1.15;color:var(--text);margin-bottom:1rem;}
+.blog-hero h1 .accent{color:var(--teal);}
+.blog-hero p{font-size:1.05rem;color:var(--text-muted);max-width:600px;margin:0 auto;line-height:1.7;font-weight:300;}
+
+/* BLOG GRID */
+.blog-grid-section{padding:4rem 5% 6rem;background:var(--bg-page);}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1200px;margin:0 auto;}
+.blog-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:2rem;transition:transform .2s,box-shadow .2s,background .3s,border-color .3s;display:flex;flex-direction:column;}
+.blog-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:transparent;}
+.blog-tag{display:inline-block;padding:.2rem .6rem;border-radius:100px;background:var(--teal-light);color:var(--teal);font-size:.68rem;font-weight:600;letter-spacing:.04em;margin-bottom:.8rem;align-self:flex-start;}
+.blog-card h2{font-family:'DM Serif Display',serif;font-size:1.15rem;color:var(--text);line-height:1.3;margin-bottom:.6rem;}
+.blog-card h2 a{color:var(--text);transition:color .2s;}
+.blog-card h2 a:hover{color:var(--teal);}
+.blog-excerpt{font-size:.85rem;color:var(--text-muted);line-height:1.65;font-weight:300;flex:1;margin-bottom:1.2rem;}
+.blog-meta{display:flex;align-items:center;justify-content:space-between;font-size:.72rem;color:var(--text-muted);padding-top:.8rem;border-top:1px solid var(--border);}
+.blog-read-more{color:var(--teal);font-weight:600;font-size:.82rem;transition:color .2s;}
+.blog-read-more:hover{color:var(--blue);}
+
+/* FOOTER */
+footer{background:#0F1A22;color:rgba(255,255,255,.55);padding:2.8rem 5%;}
+[data-theme="dark"] footer{background:#080E14;}
+.footer-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:1.2rem;}
+.footer-logo{font-family:'DM Serif Display',serif;font-size:1.2rem;color:#fff;}
+.footer-logo em{color:var(--teal);font-style:normal;}
+.footer-copy{font-size:.78rem;}
+.footer-links{display:flex;gap:1.5rem;list-style:none;}
+.footer-links a{color:rgba(255,255,255,.45);font-size:.78rem;cursor:pointer;transition:color .2s;}
+.footer-links a:hover{color:var(--teal);}
+.footer-bottom{display:flex;align-items:center;justify-content:center;gap:.6rem;opacity:.5;}
+.footer-bottom svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.footer-bottom span{font-size:.72rem;letter-spacing:.03em;}
+.footer-bottom a{color:rgba(255,255,255,.6);text-decoration:underline;text-underline-offset:3px;transition:color .2s;}
+.footer-bottom a:hover{color:var(--teal);}
+
+/* RESPONSIVE */
+@media(max-width:1100px){.blog-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none;}
+  .nav-hamburger{display:flex;}
+  .nav-actions{margin-left:auto;}
+  .blog-grid{grid-template-columns:1fr;}
+  .blog-hero{padding:100px 4% 40px;}
+  .footer-top{flex-direction:column;text-align:center;align-items:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="logo">Tudatos<em>AI</em></a>
+  <ul class="nav-links">
+    <li><a href="/">Kezdőlap</a></li>
+    <li><a href="/blog/" class="active">Blog</a></li>
+    <li><a href="/#contact">Kapcsolat</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="dark-toggle" type="button" onclick="toggleDark()" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <a href="/#contact" class="nav-cta">Kapcsolat</a>
+    <button class="nav-hamburger" id="hamburger" type="button" aria-label="Menu" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="/" onclick="closeMobileNav()">Kezdőlap</a>
+  <a href="/blog/" onclick="closeMobileNav()">Blog</a>
+  <a href="/#contact" onclick="closeMobileNav()">Kapcsolat</a>
+</div>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="blog-hero-eyebrow">TudatosAI Blog</div>
+  <h1>AI tudás, ami <span class="accent">valódi értéket</span> teremt</h1>
+  <p>Gyakorlati cikkek mesterséges intelligenciáról, üzleti automatizációról és AI stratégiáról — kifejezetten magyar vállalkozásoknak.</p>
+</section>
+
+<!-- BLOG GRID -->
+<section class="blog-grid-section">
+  <div class="blog-grid">
+
+    <article class="blog-card">
+      <span class="blog-tag">AI Stratégia</span>
+      <h2><a href="ai-strategia-kkv.html">AI stratégia KKV-knak: Hogyan kezdj hozzá 2026-ban?</a></h2>
+      <p class="blog-excerpt">Nem kell milliárdos büdzsé az AI bevezetéséhez. Megmutatjuk, hogyan építhetsz hatékony AI stratégiát lépésről lépésre, még kisebb cégként is.</p>
+      <div class="blog-meta">
+        <span>2026. feb. 15. · 8 perc olvasás</span>
+        <a href="ai-strategia-kkv.html" class="blog-read-more">Tovább →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <span class="blog-tag">AI Eszközök</span>
+      <h2><a href="chatgpt-uzleti-hasznalat.html">ChatGPT az irodában: 10 gyakorlati felhasználási mód B2B cégeknek</a></h2>
+      <p class="blog-excerpt">A ChatGPT nem csak játék — komoly üzleti értéket teremt, ha jól használod. Íme 10 konkrét, azonnal alkalmazható módszer.</p>
+      <div class="blog-meta">
+        <span>2026. feb. 12. · 10 perc olvasás</span>
+        <a href="chatgpt-uzleti-hasznalat.html" class="blog-read-more">Tovább →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <span class="blog-tag">Automatizáció</span>
+      <h2><a href="ai-automatizacio-gyorsan.html">Gyors győzelmek: 5 üzleti folyamat amit ma automatizálhatsz AI-val</a></h2>
+      <p class="blog-excerpt">Nem kell hónapokig várni az eredményekre. Ezeket a folyamatokat akár ma elkezdiheted automatizálni minimális befektetéssel.</p>
+      <div class="blog-meta">
+        <span>2026. feb. 10. · 7 perc olvasás</span>
+        <a href="ai-automatizacio-gyorsan.html" class="blog-read-more">Tovább →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <span class="blog-tag">AI Bevezetés</span>
+      <h2><a href="ai-bevezetesi-hibak.html">A 7 leggyakoribb hiba AI bevezetéskor</a></h2>
+      <p class="blog-excerpt">Sok cég lelkesen vág bele az AI-ba, de ugyanazokba a csapdákba esik. Összegyűjtöttük a leggyakoribb hibákat és a megoldásokat.</p>
+      <div class="blog-meta">
+        <span>2026. feb. 7. · 9 perc olvasás</span>
+        <a href="ai-bevezetesi-hibak.html" class="blog-read-more">Tovább →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <span class="blog-tag">Üzleti Érték</span>
+      <h2><a href="ai-roi-szamitas.html">Hogyan számold ki az AI befektetés megtérülését (ROI)?</a></h2>
+      <p class="blog-excerpt">Az AI nem hit kérdése — számokkal mérhető. Bemutatjuk a ROI számítás gyakorlati keretrendszerét magyar KKV-k számára.</p>
+      <div class="blog-meta">
+        <span>2026. feb. 4. · 8 perc olvasás</span>
+        <a href="ai-roi-szamitas.html" class="blog-read-more">Tovább →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <span class="blog-tag">Compliance</span>
+      <h2><a href="gdpr-ai-magyarorszag.html">GDPR és AI: Amit minden magyar vállalkozásnak tudnia kell</a></h2>
+      <p class="blog-excerpt">Az AI használata adatvédelmi kérdéseket vet fel. Összefoglaltuk, mire figyelj, hogy GDPR-konform maradj AI bevezetés közben.</p>
+      <div class="blog-meta">
+        <span>2026. feb. 1. · 10 perc olvasás</span>
+        <a href="gdpr-ai-magyarorszag.html" class="blog-read-more">Tovább →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <span class="blog-tag">CRM & Értékesítés</span>
+      <h2><a href="ai-crm-ertekesites.html">AI-alapú CRM: Hogyan növeld az értékesítési hatékonyságot 40%-kal?</a></h2>
+      <p class="blog-excerpt">Az AI-val felturbózott CRM rendszer nem science fiction — már ma elérhető. Megmutatjuk, hogyan hozd ki a legtöbbet belőle.</p>
+      <div class="blog-meta">
+        <span>2026. jan. 28. · 8 perc olvasás</span>
+        <a href="ai-crm-ertekesites.html" class="blog-read-more">Tovább →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <span class="blog-tag">HR & Toborzás</span>
+      <h2><a href="ai-hr-toborzes.html">Mesterséges intelligencia a toborzásban: A jövő már itt van</a></h2>
+      <p class="blog-excerpt">A toborzás az egyik legidőigényesebb HR folyamat. Az AI segítségével drasztikusan csökkentheted az időt és javíthatod a jelöltélményt.</p>
+      <div class="blog-meta">
+        <span>2026. jan. 25. · 9 perc olvasás</span>
+        <a href="ai-hr-toborzes.html" class="blog-read-more">Tovább →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <span class="blog-tag">Adatelemzés</span>
+      <h2><a href="ai-adat-donteshozatal.html">Adatvezérelt döntéshozatal: Hogyan segít az AI?</a></h2>
+      <p class="blog-excerpt">A megérzés helyett adat — az AI segít, hogy minden üzleti döntésed megalapozott legyen. Mutatjuk, hogyan kezdj bele.</p>
+      <div class="blog-meta">
+        <span>2026. jan. 22. · 8 perc olvasás</span>
+        <a href="ai-adat-donteshozatal.html" class="blog-read-more">Tovább →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <span class="blog-tag">Trendek</span>
+      <h2><a href="ai-jovoje-2026.html">Az AI jövője 2026-ban: 5 trend amit követned kell</a></h2>
+      <p class="blog-excerpt">2026 az AI mainstream áttörésének éve. Összegyűjtöttük az 5 legfontosabb trendet, amelyekre minden vállalkozásnak figyelnie kell.</p>
+      <div class="blog-meta">
+        <span>2026. jan. 18. · 7 perc olvasás</span>
+        <a href="ai-jovoje-2026.html" class="blog-read-more">Tovább →</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <a href="/" class="footer-logo">Tudatos<em>AI</em></a>
+    <div class="footer-copy">© 2026 TudatosAI – Minden jog fenntartva</div>
+    <ul class="footer-links">
+      <li><a href="/">Kezdőlap</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/#contact">Kapcsolat</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    <span>A TudatosAI a <a href="https://tdhr.hu" target="_blank">TDHR Group</a> tagja</span>
+  </div>
+</footer>
+
+<script>
+function toggleDark(){const h=document.documentElement,d=h.getAttribute('data-theme')==='dark';h.setAttribute('data-theme',d?'light':'dark');localStorage.setItem('theme',d?'light':'dark');}
+(function(){const s=localStorage.getItem('theme'),p=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(!s&&p))document.documentElement.setAttribute('data-theme','dark');})();
+function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open');document.getElementById('hamburger').classList.toggle('open');}
+function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('hamburger').classList.remove('open');}
+</script>
+<script src="/chatbot-widget.js"></script>
+</body>
+</html>
