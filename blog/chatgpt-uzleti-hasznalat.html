@@ -109,6 +109,7 @@ footer p{font-size:.82rem;color:var(--text-muted);}
   .post-body{padding:2rem 5% 3rem;}
   .post-nav{flex-direction:column;}
 }
+.cookie-bar{position:fixed;bottom:0;left:0;right:0;z-index:800;background:var(--bg-card);border-top:1px solid var(--border);padding:1rem 5%;display:flex;align-items:center;justify-content:space-between;gap:1rem;box-shadow:0 -4px 20px rgba(0,0,0,.1);transition:transform .3s,background .3s;flex-wrap:wrap;}.cookie-bar.hidden{transform:translateY(100%);}.cookie-text{font-size:.82rem;color:var(--text-mid,#3D5260);line-height:1.6;flex:1;min-width:200px;}.cookie-text a{color:var(--teal);text-decoration:underline;}.cookie-btn{padding:.55rem 1.4rem;background:var(--teal);color:#fff;border:none;border-radius:8px;font-family:"DM Sans",sans-serif;font-size:.82rem;font-weight:600;cursor:pointer;white-space:nowrap;transition:background .2s;}.cookie-btn:hover{background:var(--blue);}
 </style>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
@@ -260,5 +261,6 @@ function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle
 function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open');}
 (function(){const t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();
 </script>
+<div class="cookie-bar" id="cookieBar"><p class="cookie-text">Ez a weboldal sütiket használ a jobb felhasználói élmény érdekében. Részletekért lásd az <a href="/#contact">Adatkezelési tájékoztatót</a>.</p><button class="cookie-btn" type="button" onclick="acceptCookies()">Elfogadom</button></div><script>function acceptCookies(){document.getElementById("cookieBar").classList.add("hidden");localStorage.setItem("cookies_accepted","1");}(function(){if(localStorage.getItem("cookies_accepted")==="1")document.getElementById("cookieBar").classList.add("hidden");})();</script>
 </body>
 </html>
