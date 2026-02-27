@@ -1,0 +1,6 @@
+name = "tudatosai-chatbot"
+main = "chatbot-worker.js"
+compatibility_date = "2024-01-01"
+
+# After deployment, update WORKER_URL in chatbot-widget.js
+# Run: npx wrangler secret put ANTHROPIC_API_KEY

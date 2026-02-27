@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="hu" data-theme="light" data-lang="hu">
 <head>
+<!-- Google Analytics (loads after cookie consent) -->
+<script>
+if(localStorage.getItem('cookieOK')==='1'){
+  var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';document.head.appendChild(s);
+  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
+}
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TudatosAI – AI Bevezetés & Tanácsadás Magyar Vállalkozásoknak</title>
@@ -20,6 +27,8 @@
 <meta name="twitter:title" content="TudatosAI – AI Bevezetés & Tanácsadás">
 <meta name="twitter:description" content="AI stratégia, implementáció és tréning magyar vállalkozásoknak. Ingyenes konzultáció.">
 <meta name="twitter:image" content="https://tudatosai.hu/og-image.jpg">
+<!-- Google Search Console verification (replace content with your verification code) -->
+<meta name="google-site-verification" content="TODO_SEARCH_CONSOLE_VERIFICATION_CODE">
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <!-- JSON-LD Organization -->
@@ -44,6 +53,38 @@
     "url": "https://tdhr.hu"
   },
   "description": "AI tanácsadás és implementáció magyar vállalkozásoknak. Stratégia, automatizáció, tréning.",
+  "sameAs": []
+}
+</script>
+<!-- JSON-LD LocalBusiness (Google My Business) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "TudatosAI",
+  "description": "AI tanácsadás és implementáció magyar vállalkozásoknak. Stratégia, automatizáció, tréning.",
+  "url": "https://tudatosai.hu",
+  "telephone": "+36705678948",
+  "email": "hello@tudatosai.hu",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Alphagon Irodaház",
+    "addressLocality": "Budapest",
+    "addressCountry": "HU"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "47.4979",
+    "longitude": "19.0402"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "09:00",
+    "closes": "17:00"
+  },
+  "priceRange": "$$",
+  "image": "https://tudatosai.hu/og-image.jpg",
   "sameAs": []
 }
 </script>
