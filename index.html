@@ -1105,6 +1105,7 @@ async function sendEmail(){
     });
     if(res.ok){
       showToast(lang==='hu'?'Üzenet elküldve! Hamarosan visszajelzünk.':'Message sent! We\'ll be in touch soon.',true);
+      if(typeof gtag==='function'){gtag('event','generate_lead',{event_category:'contact',event_label:service||'general',value:1});}
       document.getElementById('fname').value='';
       document.getElementById('femail').value='';
       document.getElementById('fcompany').value='';
