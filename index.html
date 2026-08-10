@@ -87,6 +87,8 @@ if(localStorage.getItem('cookies_accepted')==='1'){
   "@type": "OfferCatalog",
   "name": "TudatosAI szolgáltatások",
   "itemListElement": [
+    {"@type": "Offer", "price": "0", "priceCurrency": "HUF", "itemOffered": {"@type": "Service", "name": "Ingyenes AI mini-audit", "description": "Rövid AI-gyorskép a cégről nyilvános adatok alapján, 48 órán belül e-mailben — kötelezettség nélkül."}},
+    {"@type": "Offer", "price": "50000", "priceCurrency": "HUF", "itemOffered": {"@type": "Service", "name": "Átfogó AI-riport", "description": "Kérdőív alapján készülő átfogó riport 5 munkanapon belül: priorizált AI-lehetőséglista megtérülés-becsléssel, eszközjavaslatokkal és 90 napos akciótervvel. A díj beszámít egy későbbi tanácsadási projektbe."}},
     {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI Stratégia és Audit", "description": "Folyamatfelmérés, AI-lehetőségtérkép, megtérülés-alapú priorizálás és 12 hónapos bevezetési roadmap vállalkozásoknak."}},
     {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI Implementáció", "description": "AI-eszközök bevezetése és testreszabása: ChatGPT, Claude, Copilot, egyedi LLM-alapú megoldások és chatbotok."}},
     {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Folyamatautomatizálás", "description": "Ismétlődő adminisztratív feladatok automatizálása: rendelés- és dokumentumfeldolgozás, ügyfélkommunikáció, riporting."}},
@@ -102,6 +104,11 @@ if(localStorage.getItem('cookies_accepted')==='1'){
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hogyan tudom kockázat nélkül kipróbálni a TudatosAI-t?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Három lépcsőben: először kérhetsz egy ingyenes AI mini-auditot, amelyet 48 órán belül e-mailben küldünk a cégedről nyilvános adatok alapján. Ha tetszik, egy rövid kérdőív kitöltése után 50 000 Ft + áfa fix áron átfogó AI-riportot készítünk 5 munkanapon belül, priorizált lehetőséglistával és 90 napos akciótervvel. Ha ez alapján közösen dolgoznánk, a riport díja beszámít a tanácsadási projekt árába."}
+    },
     {
       "@type": "Question",
       "name": "Mennyibe kerül az AI bevezetés egy magyar vállalkozásnak?",
@@ -440,6 +447,13 @@ footer{background:#0F1A22;color:rgba(255,255,255,.55);padding:2.8rem 5%;}
 .ref-result{font-family:'DM Serif Display',serif;font-size:1.05rem;color:var(--teal);margin-top:1.1rem;line-height:1.4;}
 .founder-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:3.5rem;}
 
+/* ═══ AUDIT FUNNEL ═══ */
+.audit-card{display:flex;flex-direction:column;}
+.audit-price{font-family:'DM Serif Display',serif;font-size:1.7rem;color:var(--teal);line-height:1.1;margin:.9rem 0 .1rem;}
+.audit-price small{font-size:.8rem;color:var(--text-muted);font-family:'DM Sans',sans-serif;font-weight:500;}
+.audit-cta{margin-top:1.4rem;justify-content:center;}
+.audit-note{font-size:.75rem;color:var(--text-muted);margin-top:.7rem;text-align:center;}
+
 /* ═══ FAQ ═══ */
 .faq-list{max-width:820px;display:flex;flex-direction:column;gap:.8rem;}
 .faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;transition:background .3s,border-color .3s;}
@@ -511,6 +525,7 @@ footer{background:#0F1A22;color:rgba(255,255,255,.55);padding:2.8rem 5%;}
   <a href="#" class="logo">Tudatos<em>AI</em></a>
   <ul class="nav-links">
     <li><a href="#services"><span class="lang-hu">Szolgáltatások</span><span class="lang-en">Services</span></a></li>
+    <li><a href="#audit"><span class="lang-hu">AI Audit</span><span class="lang-en">AI Audit</span></a></li>
     <li><a href="#about"><span class="lang-hu">Rólunk</span><span class="lang-en">About</span></a></li>
     <li><a href="#process"><span class="lang-hu">Hogyan dolgozunk</span><span class="lang-en">Our Process</span></a></li>
     <li><a href="#references"><span class="lang-hu">Referenciák</span><span class="lang-en">References</span></a></li>
@@ -533,6 +548,7 @@ footer{background:#0F1A22;color:rgba(255,255,255,.55);padding:2.8rem 5%;}
 
 <div class="mobile-nav" id="mobileNav">
   <a href="#services" onclick="closeMobileNav()"><span class="lang-hu">Szolgáltatások</span><span class="lang-en">Services</span></a>
+  <a href="#audit" onclick="closeMobileNav()">AI Audit</a>
   <a href="#about" onclick="closeMobileNav()"><span class="lang-hu">Rólunk</span><span class="lang-en">About</span></a>
   <a href="#process" onclick="closeMobileNav()"><span class="lang-hu">Hogyan dolgozunk</span><span class="lang-en">Our Process</span></a>
   <a href="#references" onclick="closeMobileNav()"><span class="lang-hu">Referenciák</span><span class="lang-en">References</span></a>
@@ -709,6 +725,65 @@ footer{background:#0F1A22;color:rgba(255,255,255,.55);padding:2.8rem 5%;}
     </div>
   </div>
 </div>
+
+<!-- AUDIT FUNNEL -->
+<section class="section-wrap" id="audit">
+  <div class="section-header reveal">
+    <span class="section-eyebrow lang-hu">Így kezdd velünk</span>
+    <span class="section-eyebrow lang-en">How to start</span>
+    <h2 class="section-title"><span class="lang-hu">Ismerj meg minket kockázat nélkül</span><span class="lang-en">Get to know us risk-free</span></h2>
+    <p class="section-desc lang-hu">Nem kell rögtön nagy projektbe vágni: három lépcsőben ismerheted meg, hogyan dolgozunk — az első lépés ingyenes, a második fix áras. Mire projektre kerül a sor, mindkét fél pontosan tudja, mire számíthat.</p>
+    <p class="section-desc lang-en">No need to jump into a big project: get to know how we work in three steps — the first is free, the second fixed-price. By the time a project starts, both sides know exactly what to expect.</p>
+  </div>
+  <div class="services-grid">
+    <div class="svc-card audit-card reveal">
+      <div class="svc-num lang-hu">1. lépés</div>
+      <div class="svc-num lang-en">Step 1</div>
+      <div class="svc-title lang-hu">Ingyenes AI mini-audit</div>
+      <div class="svc-title lang-en">Free AI mini-audit</div>
+      <div class="audit-price">0 Ft</div>
+      <p class="svc-desc lang-hu">Kérj egy rövid AI-gyorsképet a cégedről: nyilvános adatok és néhány alapinformáció alapján <strong>48 órán belül</strong> e-mailben megkapod, hol látunk AI-lehetőséget nálatok, és mit lépnénk először. Nincs elköteleződés — ebből eldöntöd, érdemes-e tovább beszélnünk.</p>
+      <p class="svc-desc lang-en">Request a quick AI snapshot of your company: based on public data and a few basics, within <strong>48 hours</strong> you get an email outlining where we see AI opportunities and what we'd do first. No commitment — you decide whether it's worth talking further.</p>
+      <a href="#contact" class="btn-fill audit-cta" onclick="var s=document.getElementById('fservice');if(s)s.value='Ingyenes AI mini-audit';">
+        <span class="lang-hu">Mini-auditot kérek</span>
+        <span class="lang-en">Request mini-audit</span>
+      </a>
+      <p class="audit-note lang-hu">48 órán belül, e-mailben</p>
+      <p class="audit-note lang-en">Within 48 hours, by email</p>
+    </div>
+    <div class="svc-card audit-card reveal" style="transition-delay:.1s">
+      <div class="svc-num lang-hu">2. lépés</div>
+      <div class="svc-num lang-en">Step 2</div>
+      <div class="svc-title lang-hu">Átfogó AI-riport</div>
+      <div class="svc-title lang-en">Comprehensive AI report</div>
+      <div class="audit-price">50 000 Ft <small>+ áfa</small></div>
+      <p class="svc-desc lang-hu">Ha a gyorskép meggyőzött, tölts ki egy rövid kérdőívet a folyamataitokról. Ebből <strong>5 munkanapon belül</strong> átfogó riportot készítünk: priorizált AI-lehetőséglista megtérülés-becsléssel, konkrét eszközjavaslatokkal és 90 napos akciótervvel — akkor is használható, ha végül nem velünk valósítod meg.</p>
+      <p class="svc-desc lang-en">If the snapshot convinced you, fill in a short questionnaire about your processes. Within <strong>5 working days</strong> we deliver a comprehensive report: a prioritised AI opportunity list with ROI estimates, concrete tool recommendations and a 90-day action plan — useful even if you don't implement it with us.</p>
+      <a href="/audit.html" class="btn-fill audit-cta">
+        <span class="lang-hu">Kérdőív kitöltése</span>
+        <span class="lang-en">Fill in the questionnaire</span>
+      </a>
+      <p class="audit-note lang-hu">A díjról a kérdőív után díjbekérőt küldünk</p>
+      <p class="audit-note lang-en">We send an invoice request after the questionnaire</p>
+    </div>
+    <div class="svc-card audit-card reveal" style="transition-delay:.2s">
+      <div class="svc-num lang-hu">3. lépés</div>
+      <div class="svc-num lang-en">Step 3</div>
+      <div class="svc-title lang-hu">Tanácsadási projekt</div>
+      <div class="svc-title lang-en">Consulting project</div>
+      <div class="audit-price lang-hu">Egyedi árazás</div>
+      <div class="audit-price lang-en">Custom pricing</div>
+      <p class="svc-desc lang-hu">Ha a riport alapján közösen dolgoznánk, a projekt már ismerős terepen indul: te láttad, hogyan gondolkodunk, mi ismerjük a folyamataidat. <strong>A riport díja beszámít a projekt árába.</strong></p>
+      <p class="svc-desc lang-en">If the report leads to working together, the project starts on familiar ground: you've seen how we think, we know your processes. <strong>The report fee is credited towards the project.</strong></p>
+      <a href="#contact" class="btn-outline audit-cta">
+        <span class="lang-hu">Beszéljünk</span>
+        <span class="lang-en">Let's talk</span>
+      </a>
+      <p class="audit-note lang-hu">Stratégia, implementáció, tréning — igény szerint</p>
+      <p class="audit-note lang-en">Strategy, implementation, training — as needed</p>
+    </div>
+  </div>
+</section>
 
 <!-- ABOUT -->
 <section class="section-wrap" id="about">
@@ -1104,6 +1179,13 @@ footer{background:#0F1A22;color:rgba(255,255,255,.55);padding:2.8rem 5%;}
   </div>
   <div class="faq-list reveal">
     <details class="faq-item">
+      <summary><span class="lang-hu">Hogyan tudom kockázat nélkül kipróbálni a TudatosAI-t?</span><span class="lang-en">How can I try TudatosAI risk-free?</span></summary>
+      <div class="faq-a">
+        <p class="lang-hu">Három lépcsőben: először kérhetsz egy <a href="#audit" style="color:var(--teal)">ingyenes AI mini-auditot</a>, amelyet 48 órán belül e-mailben küldünk a cégedről nyilvános adatok alapján. Ha tetszik, egy rövid kérdőív kitöltése után <strong>50 000 Ft + áfa</strong> fix áron átfogó AI-riportot készítünk 5 munkanapon belül, priorizált lehetőséglistával és 90 napos akciótervvel. Ha ez alapján közösen dolgoznánk, a riport díja beszámít a tanácsadási projekt árába.</p>
+        <p class="lang-en">In three steps: first request a <a href="#audit" style="color:var(--teal)">free AI mini-audit</a>, delivered by email within 48 hours based on public data about your company. If you like it, fill in a short questionnaire and for a fixed <strong>HUF 50,000 + VAT</strong> we deliver a comprehensive AI report within 5 working days, with a prioritised opportunity list and a 90-day action plan. If it leads to working together, the report fee is credited towards the consulting project.</p>
+      </div>
+    </details>
+    <details class="faq-item">
       <summary><span class="lang-hu">Mennyibe kerül az AI bevezetés egy magyar vállalkozásnak?</span><span class="lang-en">How much does AI adoption cost for a Hungarian business?</span></summary>
       <div class="faq-a">
         <p class="lang-hu">Az első konzultáció ingyenes. Egy vezetői AI-workshop és gyorsaudit jellemzően néhány százezer forintból megvan, egy teljes AI-stratégia és audit pár millió forintos, fix áras projekt, az automatizációs pilotok pedig terjedelemtől függően árazódnak. A pontos árat mindig a cég méretéhez és céljaihoz szabjuk.</p>
@@ -1210,6 +1292,7 @@ footer{background:#0F1A22;color:rgba(255,255,255,.55);padding:2.8rem 5%;}
         <label class="form-label lang-en">How can we help?</label>
         <select id="fservice" class="form-select">
           <option value="">Válassz kategóriát... / Select category...</option>
+          <option>Ingyenes AI mini-audit</option>
           <option>AI Stratégia &amp; Audit</option>
           <option>AI Implementáció</option>
           <option>Tréning &amp; Workshop</option>

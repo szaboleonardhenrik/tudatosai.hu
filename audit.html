@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="hu" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Átfogó AI-riport kérdőív | TudatosAI</title>
+<meta name="description" content="Rövid kérdőív az átfogó AI-riporthoz: 50 000 Ft + áfa fix áron, 5 munkanapon belül priorizált AI-lehetőséglista, megtérülés-becslés és 90 napos akcióterv a cégedre szabva.">
+<link rel="canonical" href="https://tudatosai.hu/audit.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#46A0A0;--blue:#2F6482;--gold:#D29B01;
+  --bg-page:#F8FAFB;--bg-card:#FFFFFF;--bg-alt:#F0F5F7;--border:#DDE7EC;
+  --text:#1E2E38;--text-mid:#3D5260;--text-muted:#6B8290;
+}
+[data-theme="dark"]{
+  --bg-page:#1F2F3D;--bg-card:#283D4E;--bg-alt:#243545;--border:#446070;
+  --text:#F0F5F8;--text-mid:#C4DAE5;--text-muted:#96B5C6;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg-page);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.6;}
+.wrap{max-width:720px;margin:0 auto;padding:2.5rem 1.2rem 5rem;}
+.back{display:inline-flex;align-items:center;gap:.4rem;color:var(--text-muted);text-decoration:none;font-size:.85rem;font-weight:500;margin-bottom:2rem;}
+.back:hover{color:var(--teal);}
+.logo{font-family:'DM Serif Display',serif;font-size:1.45rem;color:var(--text);text-decoration:none;}
+.logo em{color:var(--teal);font-style:normal;}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.15;margin:1.2rem 0 .8rem;}
+.lead{color:var(--text-muted);margin-bottom:.8rem;}
+.terms{background:var(--bg-alt);border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.3rem;font-size:.85rem;color:var(--text-mid);margin:1.5rem 0 2.5rem;line-height:1.7;}
+.terms strong{color:var(--text);}
+form{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2rem;}
+.fg{display:flex;flex-direction:column;gap:.35rem;margin-bottom:1.1rem;}
+label{font-size:.78rem;font-weight:600;color:var(--text-mid);letter-spacing:.03em;}
+label .opt{font-weight:400;color:var(--text-muted);}
+input,select,textarea{background:var(--bg-alt);border:1.5px solid var(--border);color:var(--text);font-family:'DM Sans',sans-serif;font-size:.92rem;padding:.7rem 1rem;border-radius:8px;outline:none;width:100%;}
+input:focus,textarea:focus,select:focus{border-color:var(--teal);background:var(--bg-card);}
+textarea{resize:vertical;min-height:90px;}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:560px){.row{grid-template-columns:1fr;}}
+.sec{font-family:'DM Serif Display',serif;font-size:1.15rem;color:var(--text);margin:1.6rem 0 1rem;padding-bottom:.4rem;border-bottom:1px solid var(--border);}
+.sec:first-child{margin-top:0;}
+button{width:100%;padding:.95rem;background:var(--teal);color:#fff;font-family:'DM Sans',sans-serif;font-weight:600;font-size:.95rem;border:none;border-radius:8px;cursor:pointer;margin-top:.6rem;}
+button:hover{background:var(--blue);}
+button:disabled{opacity:.6;cursor:wait;}
+.note{font-size:.75rem;color:var(--text-muted);text-align:center;margin-top:.8rem;}
+.note a{color:var(--teal);}
+.thanks{display:none;background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2.5rem;text-align:center;}
+.thanks h2{font-family:'DM Serif Display',serif;margin-bottom:.8rem;}
+.thanks p{color:var(--text-muted);font-size:.92rem;}
+.err{display:none;color:#c0392b;font-size:.85rem;text-align:center;margin-top:.8rem;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a href="/" class="logo">Tudatos<em>AI</em></a>
+  <h1>Átfogó AI-riport — kérdőív</h1>
+  <p class="lead">Ez a kérdőív az átfogó AI-riport alapja. Minél pontosabban válaszolsz, annál konkrétabb lesz a riport — a kitöltés kb. 10 perc.</p>
+  <div class="terms">
+    <strong>Hogyan működik?</strong> A beküldés után e-mailben díjbekérőt küldünk (<strong>50 000 Ft + áfa</strong>). A díj beérkezésétől számított <strong>5 munkanapon belül</strong> megkapod az átfogó riportot: priorizált AI-lehetőséglista megtérülés-becsléssel, konkrét eszközjavaslatok és 90 napos akcióterv. Ha később tanácsadási projektet indítunk, <strong>a riport díja beszámít a projekt árába</strong>.
+  </div>
+
+  <form id="auditForm" onsubmit="return submitAudit(event)">
+    <div class="sec">A cégről</div>
+    <div class="row">
+      <div class="fg"><label for="company">Cégnév *</label><input id="company" name="company" required></div>
+      <div class="fg"><label for="website">Weboldal</label><input id="website" name="website" placeholder="https://..."></div>
+    </div>
+    <div class="row">
+      <div class="fg"><label for="name">Kapcsolattartó neve *</label><input id="name" name="name" required></div>
+      <div class="fg"><label for="email">E-mail *</label><input id="email" name="email" type="email" required></div>
+    </div>
+    <div class="row">
+      <div class="fg"><label for="industry">Iparág / fő tevékenység *</label><input id="industry" name="industry" required></div>
+      <div class="fg"><label for="headcount">Létszám *</label>
+        <select id="headcount" name="headcount" required>
+          <option value="">Válassz...</option>
+          <option>1–9 fő</option>
+          <option>10–49 fő</option>
+          <option>50–249 fő</option>
+          <option>250+ fő</option>
+        </select>
+      </div>
+    </div>
+    <div class="fg"><label for="revenue">Éves árbevétel sáv <span class="opt">(opcionális)</span></label>
+      <select id="revenue" name="revenue">
+        <option value="">Inkább nem adom meg</option>
+        <option>100 M Ft alatt</option>
+        <option>100–500 M Ft</option>
+        <option>500 M – 2 Mrd Ft</option>
+        <option>2 Mrd Ft felett</option>
+      </select>
+    </div>
+
+    <div class="sec">Rendszerek és folyamatok</div>
+    <div class="fg"><label for="systems">Milyen rendszereket használtok? *<br><span class="opt">ERP, CRM, webshop, számlázó, Excel-nyilvántartások...</span></label><textarea id="systems" name="systems" required></textarea></div>
+    <div class="fg"><label for="painpoints">Hol megy el ma a legtöbb idő vagy pénz? *<br><span class="opt">Pl. rendelésrögzítés, riportok, ügyfélkommunikáció, adminisztráció...</span></label><textarea id="painpoints" name="painpoints" required></textarea></div>
+    <div class="fg"><label for="ai_now">Használtok-e már AI-t valamire? <span class="opt">(akár egyénileg, pl. ChatGPT)</span></label><textarea id="ai_now" name="ai_now"></textarea></div>
+
+    <div class="sec">Célok</div>
+    <div class="fg"><label for="goals">Mit szeretnétek elérni az AI-val? *<br><span class="opt">Pl. költségcsökkentés, gyorsabb kiszolgálás, több értékesítés, kevesebb admin...</span></label><textarea id="goals" name="goals" required></textarea></div>
+    <div class="fg"><label for="timeline">Mikor vágnátok bele?</label>
+      <select id="timeline" name="timeline">
+        <option value="">Válassz...</option>
+        <option>Minél előbb</option>
+        <option>3 hónapon belül</option>
+        <option>Még idén</option>
+        <option>Egyelőre csak tájékozódom</option>
+      </select>
+    </div>
+    <input type="text" name="_gotcha" id="hp" style="display:none" tabindex="-1" autocomplete="off">
+    <button type="submit" id="sendBtn">Kérdőív beküldése</button>
+    <p class="err" id="errMsg">Hiba történt a beküldéskor — kérlek próbáld újra, vagy írj a hello@tudatosai.hu címre.</p>
+    <p class="note">A beküldéssel elfogadod az <a href="/#" onclick="return false" title="Az adatkezelési tájékoztató a főoldalon érhető el">adatkezelési tájékoztatót</a> (elérhető a főoldal láblécéből). Az adatokat kizárólag a riport elkészítéséhez használjuk.</p>
+  </form>
+
+  <div class="thanks" id="thanks">
+    <h2>Köszönjük! 🎉</h2>
+    <p>A kérdőív beérkezett. Hamarosan e-mailben küldjük a díjbekérőt (50 000 Ft + áfa), a díj beérkezésétől számított 5 munkanapon belül pedig az átfogó AI-riportot.</p>
+    <p style="margin-top:1rem"><a href="/" style="color:var(--teal)">← Vissza a főoldalra</a></p>
+  </div>
+</div>
+<script>
+(function(){const s=localStorage.getItem('theme');if(s==='dark'||(!s&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-theme','dark');})();
+async function submitAudit(e){
+  e.preventDefault();
+  if(document.getElementById('hp').value)return false;
+  const f=document.getElementById('auditForm');
+  const btn=document.getElementById('sendBtn');
+  btn.disabled=true;btn.textContent='Küldés...';
+  const data={form_type:'atfogo-ai-riport-kerdoiv'};
+  new FormData(f).forEach((v,k)=>{if(k!=='_gotcha')data[k]=v;});
+  try{
+    const res=await fetch('https://formspree.io/f/xpqjjabw',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)});
+    if(res.ok){f.style.display='none';document.getElementById('thanks').style.display='block';window.scrollTo({top:0});}
+    else throw new Error();
+  }catch(_){
+    document.getElementById('errMsg').style.display='block';
+    btn.disabled=false;btn.textContent='Kérdőív beküldése';
+  }
+  return false;
+}
+</script>
+</body>
+</html>
