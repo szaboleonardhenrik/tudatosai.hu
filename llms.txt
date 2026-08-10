@@ -1,0 +1,39 @@
+# TudatosAI
+
+> AI tanácsadás és AI bevezetés magyar vállalkozásoknak — a TDHR Group tagja. AI stratégia és audit, folyamatautomatizálás, egyedi AI- és szoftverfejlesztés (ERP, CRM, ATS, SaaS, mobil app), tréning és EU AI Act / GDPR compliance. A módszertant saját, éles üzemben futó rendszereinken bizonyítjuk.
+
+## Szolgáltatások
+
+- AI Stratégia & Audit: folyamatfelmérés, AI-lehetőségtérkép, megtérülés-alapú priorizálás, 12 hónapos roadmap
+- AI Implementáció: ChatGPT, Claude, Copilot és egyedi LLM-megoldások bevezetése, chatbotok
+- Folyamatautomatizálás: dokumentum- és rendelésfeldolgozás, ügyfélkommunikáció, riporting
+- Egyedi szoftver- és mobilapp-fejlesztés: ERP, CRM, ATS, SaaS platformok, iOS/Android appok
+- Integrációk: NAV online számla, banki és fizetési integrációk (Stripe, SimplePay)
+- AI Tréning & Workshopok: prompt engineering, üzleti AI-használat, vezetői workshopok
+- Etikus AI & Compliance: EU AI Act, GDPR, belső AI-szabályzat
+
+## Referenciák
+
+- Tudatos Diák Iskolaszövetkezet: országos diákmunka-közvetítő teljes digitalizációja — AI-alapú CV-feldolgozás és jelöltszűrés, iOS/Android mobil appok, automatizált elszámolás és ügyfélkommunikáció
+- Anyway üzleti platform: saját fejlesztésű, hatmodulos üzleti SaaS (könyvelés, CRM, HR, pénzügy, karrier, jog) NAV online számla integrációval, éles előfizetőkkel
+- T-Cloud Solutions Kft.: pénzügyi riporting-automatizálás — a havi zárás 3 napról fél napra csökkent
+- TDHR Group: saját belső AI-üzem — automatikus riportok, AI-költségkontroll dashboard, chatbotok
+
+## Csapat
+
+- Yilmaz Attila Zoltán — társalapító, a tanácsadási üzletág vezetője (BGE KVIK Kereskedelem és Marketing; Corvinus Vezetés és Szervezés MSc; korábban IFUA Horváth & Partners vezetői tanácsadó)
+- Szabó Leonárd — társalapító, üzletfejlesztés és operáció
+
+## Kapcsolat
+
+- Web: https://tudatosai.hu
+- E-mail: hello@tudatosai.hu
+- Telefon: +36 70 567 8948
+- Iroda: Alphagon Irodaház, Budapest
+- Cégcsoport: https://tdhr.hu
+- Az első konzultáció ingyenes.
+
+## Tartalom
+
+- [Főoldal](https://tudatosai.hu/): szolgáltatások, referenciák, gyakori kérdések, kapcsolat
+- [Blog](https://tudatosai.hu/blog/): magyar nyelvű cikkek AI-stratégiáról, automatizálásról, ROI-számításról, GDPR-ról és üzleti AI-használatról
