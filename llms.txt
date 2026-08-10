@@ -4,9 +4,9 @@
 
 ## Hogyan lehet elindulni (belépő termékek)
 
-1. **Ingyenes AI mini-audit** (0 Ft): rövid AI-gyorskép a cégről nyilvános adatok alapján, 48 órán belül e-mailben — kötelezettség nélkül.
-2. **Átfogó AI-riport** (50 000 Ft + áfa): rövid kérdőív után 5 munkanapon belül priorizált AI-lehetőséglista megtérülés-becsléssel, eszközjavaslatokkal és 90 napos akciótervvel. Kérdőív: https://tudatosai.hu/audit.html
-3. **Tanácsadási projekt** (egyedi árazás): a riport díja beszámít a projekt árába.
+1. **Ingyenes AI mini-audit** (0 Ft): az átfogó riport vezetői összefoglalója nyilvános cégadatok alapján, 48 órán belül e-mailben — a részletes fejezetek zároltan látszanak, kötelezettség nélkül.
+2. **Átfogó AI-riport** (50 000 Ft + áfa) és/vagy **1 órás konzultáció** (50 000 Ft + áfa), a kettő együtt **80 000 Ft + áfa**: rövid kérdőív után 5 munkanapon belül priorizált AI-lehetőséglista megtérülés-becsléssel, eszközjavaslatokkal és 90 napos akciótervvel. Megrendelés: https://tudatosai.hu/audit.html
+3. **Tanácsadási projekt** (egyedi árazás): a kifizetett riport- és konzultációs díjak beszámítanak a projekt árába.
 
 ## Szolgáltatások
 
