@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Átfogó AI-riport és konzultáció — megrendelés | TudatosAI</title>
-<meta name="description" content="Átfogó AI-riport (50 000 Ft + áfa), 1 órás konzultáció (50 000 Ft + áfa) vagy a kettő együtt (80 000 Ft + áfa): priorizált AI-lehetőséglista, megtérülés-becslés és 90 napos akcióterv a cégedre szabva.">
+<title>Részletes AI-elemzés és találkozó — megrendelés | TudatosAI</title>
+<meta name="description" content="Részletes AI-elemzés (50 000 Ft + áfa), 1 órás találkozó (50 000 Ft + áfa) vagy a kettő együtt (80 000 Ft + áfa): azonnal használható, mélyen kifejtett javaslatok, priorizálva, megtérülés-becsléssel — a cégedre szabva.">
 <link rel="canonical" href="https://tudatosai.hu/audit.html">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,10 +56,10 @@ button:disabled{opacity:.6;cursor:wait;}
 <body>
 <div class="wrap">
   <a href="/" class="logo">Tudatos<em>AI</em></a>
-  <h1>Átfogó AI-riport és konzultáció — megrendelés</h1>
-  <p class="lead">Ez a kérdőív az átfogó AI-riport és a konzultáció alapja. Minél pontosabban válaszolsz, annál konkrétabb lesz az eredmény — a kitöltés kb. 10 perc.</p>
+  <h1>Részletes elemzés és találkozó — megrendelés</h1>
+  <p class="lead">Ez a kérdőív a részletes elemzés alapja — ebből látjuk igazán az üzletedet, hogy azonnal használható, mélyen kifejtett javaslatokat adhassunk. A kitöltés kb. 10 perc.</p>
   <div class="terms">
-    <strong>Hogyan működik?</strong> A beküldés után e-mailben díjbekérőt küldünk a választott csomagról — <strong>átfogó riport: 50 000 Ft + áfa · 1 órás konzultáció: 50 000 Ft + áfa · a kettő együtt: 80 000 Ft + áfa</strong>. A riportot a díj beérkezésétől számított <strong>5 munkanapon belül</strong> kapod meg (priorizált AI-lehetőséglista megtérülés-becsléssel, eszközjavaslatok, 90 napos akcióterv); a konzultációhoz a fizetés után e-mailben egyeztetünk időpontot. Ha később tanácsadási projektet indítunk, <strong>a kifizetett díjak beszámítanak a projekt árába</strong>.
+    <strong>Hogyan működik?</strong> A beküldés után e-mailben díjbekérőt küldünk a választott csomagról — <strong>részletes elemzés: 50 000 Ft + áfa · 1 órás találkozó: 50 000 Ft + áfa · a kettő együtt: 80 000 Ft + áfa</strong>. Az elemzést a díj beérkezésétől számított <strong>5 munkanapon belül</strong> kapod meg; a találkozóhoz a fizetés után e-mailben egyeztetünk időpontot. Tanácsadási ajánlatot csak a folyamat végén adunk — akkor, ha te már láttad, hogyan dolgozunk, és mi is azt mondhatjuk, hogy tudunk segíteni. <strong>A kifizetett díjak beszámítanak a projekt árába.</strong>
   </div>
 
   <form id="auditForm" onsubmit="return submitAudit(event)">
@@ -67,9 +67,9 @@ button:disabled{opacity:.6;cursor:wait;}
     <div class="fg"><label for="package">Csomag *</label>
       <select id="package" name="package" required>
         <option value="">Válassz...</option>
-        <option>Átfogó AI-riport — 50 000 Ft + áfa</option>
-        <option>1 órás konzultáció — 50 000 Ft + áfa</option>
-        <option>Riport + konzultáció — 80 000 Ft + áfa</option>
+        <option>Részletes elemzés — 50 000 Ft + áfa</option>
+        <option>1 órás találkozó — 50 000 Ft + áfa</option>
+        <option>Elemzés + találkozó — 80 000 Ft + áfa</option>
       </select>
     </div>
 
@@ -123,12 +123,12 @@ button:disabled{opacity:.6;cursor:wait;}
     <input type="text" name="_gotcha" id="hp" style="display:none" tabindex="-1" autocomplete="off">
     <button type="submit" id="sendBtn">Kérdőív beküldése</button>
     <p class="err" id="errMsg">Hiba történt a beküldéskor — kérlek próbáld újra, vagy írj a hello@tudatosai.hu címre.</p>
-    <p class="note">A beküldéssel elfogadod az <a href="/#" onclick="return false" title="Az adatkezelési tájékoztató a főoldalon érhető el">adatkezelési tájékoztatót</a> (elérhető a főoldal láblécéből). Az adatokat kizárólag a riport elkészítéséhez használjuk.</p>
+    <p class="note">A beküldéssel elfogadod az <a href="/#" onclick="return false" title="Az adatkezelési tájékoztató a főoldalon érhető el">adatkezelési tájékoztatót</a> (elérhető a főoldal láblécéből). Az adatokat kizárólag az elemzés elkészítéséhez használjuk.</p>
   </form>
 
   <div class="thanks" id="thanks">
     <h2>Köszönjük! 🎉</h2>
-    <p>A kérdőív beérkezett. Hamarosan e-mailben küldjük a díjbekérőt a választott csomagról; a riportot a díj beérkezésétől számított 5 munkanapon belül kapod, konzultáció esetén e-mailben egyeztetünk időpontot.</p>
+    <p>A kérdőív beérkezett. Hamarosan e-mailben küldjük a díjbekérőt a választott csomagról; a részletes elemzést a díj beérkezésétől számított 5 munkanapon belül kapod, találkozó esetén e-mailben egyeztetünk időpontot.</p>
     <p style="margin-top:1rem"><a href="/" style="color:var(--teal)">← Vissza a főoldalra</a></p>
   </div>
 </div>
@@ -140,7 +140,7 @@ async function submitAudit(e){
   const f=document.getElementById('auditForm');
   const btn=document.getElementById('sendBtn');
   btn.disabled=true;btn.textContent='Küldés...';
-  const data={form_type:'atfogo-ai-riport-kerdoiv'};
+  const data={form_type:'reszletes-elemzes-kerdoiv'};
   new FormData(f).forEach((v,k)=>{if(k!=='_gotcha')data[k]=v;});
   try{
     const res=await fetch('https://formspree.io/f/xpqjjabw',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)});
