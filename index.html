@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="hu" data-theme="light" data-lang="hu">
 <head>
-<!-- Google Analytics (loads after cookie consent) -->
-<script>
-if(localStorage.getItem('cookies_accepted')==='1'){
-  var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-J6CXXQPSQL';document.head.appendChild(s);
-  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-J6CXXQPSQL');
-}
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI tanácsadás és AI bevezetés vállalkozásoknak | TudatosAI – TDHR Group</title>
@@ -397,12 +390,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--bg-nav);bac
 .gdpr-link{color:var(--teal);cursor:pointer;text-decoration:underline;}
 
 /* ═══ COOKIE CONSENT ═══ */
-.cookie-bar{position:fixed;bottom:0;left:0;right:0;z-index:800;background:var(--bg-card);border-top:1px solid var(--border);padding:1rem 5%;display:flex;align-items:center;justify-content:space-between;gap:1rem;box-shadow:0 -4px 20px rgba(0,0,0,.1);transition:transform .3s,background .3s;flex-wrap:wrap;}
-.cookie-bar.hidden{transform:translateY(100%);}
-.cookie-text{font-size:.82rem;color:var(--text-mid);line-height:1.6;flex:1;min-width:200px;}
-.cookie-text a{color:var(--teal);text-decoration:underline;}
-.cookie-btn{padding:.55rem 1.4rem;background:var(--teal);color:#fff;border:none;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:600;cursor:pointer;white-space:nowrap;transition:background .2s;}
-.cookie-btn:hover{background:var(--blue);}
 
 /* ═══ TOAST ═══ */
 .toast{position:fixed;bottom:7rem;right:2rem;z-index:2000;color:#fff;padding:1rem 1.5rem;border-radius:10px;font-size:.88rem;font-weight:500;box-shadow:var(--shadow-lg);display:none;align-items:center;gap:.6rem;max-width:320px;}
@@ -410,23 +397,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--bg-nav);bac
 .toast svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
 
 /* ═══ GDPR MODAL ═══ */
-.modal-overlay{display:none;position:fixed;inset:0;z-index:1000;background:rgba(10,20,30,.6);backdrop-filter:blur(5px);align-items:center;justify-content:center;padding:2rem;}
-.modal-overlay.open{display:flex;}
-.modal-box{background:var(--bg-card);border:1px solid var(--border);border-radius:18px;padding:2.5rem;max-width:680px;width:100%;max-height:82vh;overflow-y:auto;position:relative;box-shadow:var(--shadow-lg);transition:background .3s,border-color .3s;}
-.modal-close{position:absolute;top:1.2rem;right:1.2rem;background:var(--bg-alt);border:1px solid var(--border);border-radius:8px;width:32px;height:32px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
-.modal-close:hover{background:var(--border);}
-.modal-close svg{width:16px;height:16px;stroke:var(--text-muted);fill:none;stroke-width:2;stroke-linecap:round;}
-.modal-title{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--text);margin-bottom:.3rem;}
-.modal-subtitle{font-size:.82rem;color:var(--text-muted);margin-bottom:2rem;}
-.gdpr-section{margin-bottom:1.8rem;}
-.gdpr-section h3{font-size:.9rem;font-weight:600;color:var(--text);margin-bottom:.6rem;padding-bottom:.4rem;border-bottom:1px solid var(--border);}
-.gdpr-section p,.gdpr-section li{font-size:.82rem;color:var(--text-muted);line-height:1.7;}
-.gdpr-section ul{padding-left:1.2rem;}
-.gdpr-section li{margin-bottom:.35rem;}
-.gdpr-section strong{color:var(--text);}
-.gdpr-table{width:100%;border-collapse:collapse;font-size:.77rem;margin-top:.6rem;}
-.gdpr-table th{background:var(--bg-alt);padding:.6rem .8rem;text-align:left;font-weight:600;color:var(--text-mid);border:1px solid var(--border);}
-.gdpr-table td{padding:.55rem .8rem;border:1px solid var(--border);color:var(--text-muted);}
 
 /* ═══ FOOTER ═══ */
 footer{background:#0F1A22;color:rgba(255,255,255,.55);padding:2.8rem 5%;}
@@ -532,7 +502,6 @@ footer{background:#0F1A22;color:rgba(255,255,255,.55);padding:2.8rem 5%;}
 @media(max-width:480px){
   .hl-grid{grid-template-columns:1fr;}
   .lang-toggle{display:none;}
-  .modal-box{padding:1.8rem 1.4rem;}
   .metrics-row{grid-template-columns:1fr;}
 }
 </style>
@@ -1404,8 +1373,8 @@ footer{background:#0F1A22;color:rgba(255,255,255,.55);padding:2.8rem 5%;}
         <span class="lang-hu">Üzenet küldése</span>
         <span class="lang-en">Send message</span>
       </button>
-      <p class="form-note lang-hu">Az üzenet elküldésével elfogadod az <span class="gdpr-link" onclick="openGdpr()">Adatkezelési tájékoztatónkat</span>.</p>
-      <p class="form-note lang-en">By sending you accept our <span class="gdpr-link" onclick="openGdpr()">Privacy Policy</span>.</p>
+      <p class="form-note lang-hu">Az üzenet elküldésével elfogadod az <a class="gdpr-link" href="https://tudatosdiak.hu/adatkezelesi-tajekoztato" target="_blank" rel="noopener">Adatkezelési tájékoztatónkat</a>.</p>
+      <p class="form-note lang-en">By sending you accept our <a class="gdpr-link" href="https://tudatosdiak.hu/en/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>.</p>
     </div>
   </div>
 </section>
@@ -1417,7 +1386,8 @@ footer{background:#0F1A22;color:rgba(255,255,255,.55);padding:2.8rem 5%;}
     <div class="footer-copy lang-hu">© 2026 TudatosAI – Minden jog fenntartva</div>
     <div class="footer-copy lang-en">© 2026 TudatosAI – All rights reserved</div>
     <ul class="footer-links">
-      <li><a onclick="openGdpr()"><span class="lang-hu">Adatkezelési tájékoztató</span><span class="lang-en">Privacy Policy</span></a></li>
+      <li><a class="lang-hu" href="https://tudatosdiak.hu/adatkezelesi-tajekoztato">Adatkezelési tájékoztató</a><a class="lang-en" href="https://tudatosdiak.hu/en/privacy-policy">Privacy Policy</a></li>
+      <li><a class="lang-hu" href="https://tudatosdiak.hu/impresszum">Impresszum</a><a class="lang-en" href="https://tudatosdiak.hu/en/legal-notice">Legal notice</a></li>
       <li><a href="/blog/">Blog</a></li>
       <li><a href="#contact"><span class="lang-hu">Kapcsolat</span><span class="lang-en">Contact</span></a></li>
     </ul>
@@ -1435,70 +1405,6 @@ footer{background:#0F1A22;color:rgba(255,255,255,.55);padding:2.8rem 5%;}
   <span id="toastMsg"></span>
 </div>
 
-<!-- GDPR MODAL -->
-<div class="modal-overlay" id="gdprModal">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeGdpr()"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-    <div class="modal-title lang-hu">Adatkezelési tájékoztató</div>
-    <div class="modal-title lang-en">Privacy Policy</div>
-    <div class="modal-subtitle lang-hu">Hatályos: 2026. január 1. · TudatosAI (tudatosai.hu) · a TDHR Group tagja</div>
-    <div class="modal-subtitle lang-en">Effective: 1 January 2026 · TudatosAI (tudatosai.hu) · member of TDHR Group</div>
-    <div class="gdpr-section">
-      <h3 class="lang-hu">1. Az adatkezelő</h3><h3 class="lang-en">1. Data Controller</h3>
-      <p><strong>TudatosAI</strong> – a TDHR Group tagja<br><strong>Web:</strong> tudatosai.hu<br><strong>Email:</strong> hello@tudatosai.hu<br><strong class="lang-hu">Telefon:</strong><strong class="lang-en">Phone:</strong> +36 70 567 8948<br><strong class="lang-hu">Cégcsoport:</strong><strong class="lang-en">Group:</strong> <a href="https://tdhr.hu" target="_blank" style="color:var(--teal)">TDHR Group (tdhr.hu)</a></p>
-    </div>
-    <div class="gdpr-section">
-      <h3 class="lang-hu">2. Kezelt adatok és célok</h3><h3 class="lang-en">2. Data Processed and Purposes</h3>
-      <table class="gdpr-table">
-        <thead><tr>
-          <th class="lang-hu">Adat</th><th class="lang-en">Data</th>
-          <th class="lang-hu">Cél</th><th class="lang-en">Purpose</th>
-          <th class="lang-hu">Jogalap</th><th class="lang-en">Legal basis</th>
-          <th class="lang-hu">Megőrzés</th><th class="lang-en">Retention</th>
-        </tr></thead>
-        <tbody>
-          <tr><td class="lang-hu">Név, email, telefon</td><td class="lang-en">Name, email, phone</td><td class="lang-hu">Kapcsolatfelvétel</td><td class="lang-en">Contact</td><td>GDPR 6. cikk (a)</td><td class="lang-hu">Ügyintézés + 1 év</td><td class="lang-en">Resolution + 1 yr</td></tr>
-          <tr><td class="lang-hu">Cég, üzenet</td><td class="lang-en">Company, message</td><td class="lang-hu">Ajánlat személyre szabása</td><td class="lang-en">Personalised proposal</td><td>GDPR 6. cikk (a)</td><td class="lang-hu">Ügyintézés + 1 év</td><td class="lang-en">Resolution + 1 yr</td></tr>
-          <tr><td class="lang-hu">IP-cím, böngésző</td><td class="lang-en">IP, browser</td><td class="lang-hu">Biztonság</td><td class="lang-en">Security</td><td>GDPR 6. cikk (f)</td><td>30 <span class="lang-hu">nap</span><span class="lang-en">days</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="gdpr-section">
-      <h3 class="lang-hu">3. Adatmegosztás</h3><h3 class="lang-en">3. Data Sharing</h3>
-      <p class="lang-hu">Személyes adatait harmadik félnek nem értékesítjük. A TudatosAI a TDHR Group tagja; csoporton belüli adatmegosztás kizárólag az érintett hozzájárulásával történik.</p>
-      <p class="lang-en">We do not sell personal data. As a TDHR Group member, intra-group sharing occurs only with consent.</p>
-    </div>
-    <div class="gdpr-section">
-      <h3 class="lang-hu">4. Az érintett jogai</h3><h3 class="lang-en">4. Your Rights</h3>
-      <ul>
-        <li><strong class="lang-hu">Hozzáférés</strong><strong class="lang-en">Access</strong></li>
-        <li><strong class="lang-hu">Helyesbítés</strong><strong class="lang-en">Rectification</strong></li>
-        <li><strong class="lang-hu">Törlés ("elfeledtetési jog")</strong><strong class="lang-en">Erasure ("right to be forgotten")</strong></li>
-        <li><strong class="lang-hu">Korlátozás</strong><strong class="lang-en">Restriction</strong></li>
-        <li><strong class="lang-hu">Adathordozhatóság</strong><strong class="lang-en">Portability</strong></li>
-        <li><strong class="lang-hu">Tiltakozás</strong><strong class="lang-en">Objection</strong></li>
-      </ul>
-      <p style="margin-top:.7rem" class="lang-hu">Kérelmek: <strong>hello@tudatosai.hu</strong> — válaszidő: 30 nap.</p>
-      <p style="margin-top:.7rem" class="lang-en">Requests: <strong>hello@tudatosai.hu</strong> — response: 30 days.</p>
-    </div>
-    <div class="gdpr-section">
-      <h3 class="lang-hu">5. Adatbiztonság</h3><h3 class="lang-en">5. Security</h3>
-      <p class="lang-hu">Titkosított kapcsolat (HTTPS/SSL), EU-területen elhelyezett Rackhost szerver, kétfaktoros hitelesítés.</p>
-      <p class="lang-en">Encrypted connection (HTTPS/SSL), EU-based Rackhost server, two-factor authentication.</p>
-    </div>
-    <div class="gdpr-section">
-      <h3 class="lang-hu">6. Jogorvoslat</h3><h3 class="lang-en">6. Complaints</h3>
-      <p class="lang-hu">NAIH: <strong>naih.hu</strong> · ugyfelszolgalat@naih.hu · +36 1 391-1400</p>
-      <p class="lang-en">NAIH (Hungarian Data Protection Authority): <strong>naih.hu</strong></p>
-    </div>
-    <div class="gdpr-section">
-      <h3>Cookie</h3>
-      <p class="lang-hu">Csak munkamenet-sütik (dark mode, nyelv). Harmadik fél marketing sütiket nem használunk.</p>
-      <p class="lang-en">Only essential session cookies (dark mode, language preference). No third-party marketing cookies.</p>
-    </div>
-  </div>
-</div>
-
 <script>
 function toggleDark(){const h=document.documentElement,d=h.getAttribute('data-theme')==='dark';h.setAttribute('data-theme',d?'light':'dark');localStorage.setItem('theme',d?'light':'dark');}
 (function(){const s=localStorage.getItem('theme'),p=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(!s&&p))document.documentElement.setAttribute('data-theme','dark');})();
@@ -1506,10 +1412,6 @@ function setLang(l){document.documentElement.setAttribute('data-lang',l);documen
 (function(){const s=localStorage.getItem('lang')||'hu';document.documentElement.setAttribute('data-lang',s);const b=document.getElementById('btn'+s.charAt(0).toUpperCase()+s.slice(1));if(b)b.classList.add('active');})();
 function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open');document.getElementById('hamburger').classList.toggle('open');}
 function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('hamburger').classList.remove('open');}
-function openGdpr(){document.getElementById('gdprModal').classList.add('open');document.body.style.overflow='hidden';}
-function closeGdpr(){document.getElementById('gdprModal').classList.remove('open');document.body.style.overflow='';}
-document.getElementById('gdprModal').addEventListener('click',function(e){if(e.target===this)closeGdpr();});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeGdpr();});
 function showToast(msg,ok){const t=document.getElementById('toast');t.style.background=ok?'var(--teal)':'#e05555';document.getElementById('toastMsg').textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4000);}
 async function sendEmail(){
   const name=document.getElementById('fname').value.trim();
@@ -1551,20 +1453,6 @@ async function sendEmail(){
 const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:.09});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 window.addEventListener('scroll',()=>{const secs=document.querySelectorAll('section[id]');let c='';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-100)c=s.id;});document.querySelectorAll('.nav-links a').forEach(a=>{a.style.color=a.getAttribute('href')==='#'+c?'var(--teal)':'';});},{passive:true});
-</script>
-<!-- COOKIE CONSENT -->
-<div class="cookie-bar" id="cookieBar">
-  <p class="cookie-text">
-    <span class="lang-hu">Ez a weboldal sütiket használ a jobb felhasználói élmény érdekében. Részletekért lásd az <a href="#" onclick="openGdpr();return false;">Adatkezelési tájékoztatót</a>.</span>
-    <span class="lang-en">This website uses cookies for a better experience. See our <a href="#" onclick="openGdpr();return false;">Privacy Policy</a>.</span>
-  </p>
-  <button class="cookie-btn" type="button" onclick="acceptCookies()">
-    <span class="lang-hu">Elfogadom</span><span class="lang-en">Accept</span>
-  </button>
-</div>
-<script>
-function acceptCookies(){document.getElementById('cookieBar').classList.add('hidden');localStorage.setItem('cookies_accepted','1');}
-(function(){if(localStorage.getItem('cookies_accepted')==='1')document.getElementById('cookieBar').classList.add('hidden');})();
 </script>
 <script src="/chatbot-widget.js"></script>
 </body>
